@@ -6,6 +6,8 @@ export const MESSAGE_SHOW = 'COMMON_MESSAGE_SHOW'
 export const MESSAGE_HIDE = 'COMMON_MESSAGE_HIDE'
 
 // Actions
+
+// Action creator that returns a message action used in the popup
 export function messageShow(message) {
   return { type: MESSAGE_SHOW, message }
 }

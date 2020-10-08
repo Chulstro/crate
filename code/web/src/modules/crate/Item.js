@@ -28,11 +28,16 @@ class Item extends PureComponent {
     }
   }
 
+  // this is the function that's fired when the button's clicked. Might either
+  // repurpose this or write another function for the redirect...
   onClickSubscribe = (crateId) => {
+
+    // pretty straightforward sets isLoading in state to true
     this.setState({
       isLoading: true
     })
 
+    // uses the 
     this.props.messageShow('Subscribing, please wait...')
 
     this.props.create({ crateId })
@@ -75,8 +80,11 @@ class Item extends PureComponent {
           <p style={{ color: grey2, marginTop: '1em' }}>{description}</p>
 
           <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+
+            {/* the button that starts the whole process */}
             <Button
               theme="primary"
+              // when the button's clicked, it fires this function
               onClick={this.onClickSubscribe.bind(this, id)}
               type="button"
               disabled={ isLoading }

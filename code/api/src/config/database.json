@@ -1,18 +1,14 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "crate",
+    "database": "crate_development",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "seederStorage": "sequelize"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "crate",
+    "database": "crate_production",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "seederStorage": "sequelize"
   }
 }
