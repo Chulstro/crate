@@ -13,3 +13,5 @@ export const GET_WOMENS_ACCESSORIES = ''
 export const GET_ALL_MENS = ''
 export const GET_ALL_WOMENS = ''
 
+// nav action types as well? for moving forward and backward
+

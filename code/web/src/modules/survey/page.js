@@ -19,6 +19,7 @@ import { grey, grey2 } from '../../ui/common/colors'
 // Want to have Loading handy
 
 import Loading from "../common/Loading";
+// import actions needed for navigation and fetches as well
 
 // We'll need to use mapState && mapDispatch for the clothing images, as well as
 // an indicator for which screen we should be on - the instructions screen, each
