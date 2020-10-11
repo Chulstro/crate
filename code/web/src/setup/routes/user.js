@@ -27,4 +27,6 @@ export default {
     component: Subscriptions,
     auth: true
   }
+
+  // will probably include a new path here within user to /user/style-preferences
 }
