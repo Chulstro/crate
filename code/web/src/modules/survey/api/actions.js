@@ -15,3 +15,11 @@ export const GET_ALL_WOMENS = ''
 
 // nav action types as well? for moving forward and backward
 
+export const moveForward = () => {
+  // handles navigation forward through survey
+}
+
+export const moveBackward = () => {
+  // handles navigation backward through survey
+}
+
