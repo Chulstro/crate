@@ -28,7 +28,7 @@ import Loading from "../common/Loading";
 // if so, however, that means we'll be using indicators within state for the
 // conditional renders
 
-class StylePreferences extends PureComponent {
+class Page extends PureComponent {
   constructor() {}
 
   componentDidMount = () => {
@@ -50,6 +50,6 @@ class StylePreferences extends PureComponent {
 
 // propTypes and all that fun stuff
 
-export default connect()(StylePreferences)
+export default connect()(Page)
 
 
