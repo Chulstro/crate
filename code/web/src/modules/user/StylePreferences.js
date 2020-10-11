@@ -31,9 +31,21 @@ import Loading from "../common/Loading";
 class StylePreferences extends PureComponent {
   constructor() {}
 
+  componentDidMount = () => {
+    // fetches images for correct crate
+  }
 
+  moveForward = () => {
+    // sets state to change the view for conditional render
+  }
 
-  render() {}
+  moveBackward = () => {
+    // similar to moveForward... but backwards
+  }
+
+  render = () => {
+    // will contain conditionals for each page
+  }
 }
 
 // propTypes and all that fun stuff
