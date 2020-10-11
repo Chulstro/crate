@@ -12,10 +12,32 @@ import { Helmet } from "react-helmet";
 // similar but are definitely subject to change.
 
 import { Grid, GridCell } from '../../ui/grid'
-import ImageTile from "../../ui/image/Tile"
+import ImageTile from "../../ui/image/Tile" // might come in handy as well
 import { H3 } from '../../ui/typography'
 import { grey, grey2 } from '../../ui/common/colors'
 
 // Want to have Loading handy
 
 import Loading from "../common/Loading";
+
+// We'll need to use mapState && mapDispatch for the clothing images, as well as
+// an indicator for which screen we should be on - the instructions screen, each
+// survey page, or the survey finish page. Will ask team about this, not sure
+// how I feel about everything living in this one file and rendering conditionally.
+
+// if so, however, that means we'll be using indicators within state for the
+// conditional renders
+
+class StylePreferences extends PureComponent {
+  constructor() {}
+
+
+
+  render() {}
+}
+
+// propTypes and all that fun stuff
+
+export default connect()(StylePreferences)
+
+
