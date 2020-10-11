@@ -28,5 +28,5 @@ export default {
     auth: true
   }
 
-  // will probably include a new path here within user to /user/style-preferences
+  // will probably include a new path here within user to /user/style-preferences?
 }
