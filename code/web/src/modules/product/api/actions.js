@@ -213,3 +213,10 @@ export function getTypes() {
     }))
   }
 }
+
+// Get all products for survey
+export function getProductsForSurvey(crateName) {
+  return dispatch => {
+    
+  }
+}

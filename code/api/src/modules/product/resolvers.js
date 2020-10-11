@@ -7,6 +7,11 @@ export async function getAll() {
   return await models.Product.findAll({ order: [['id', 'DESC']] })
 }
 
+// Get all products for survey
+// export async function getAllForSurvey() {
+  // ...
+// }
+
 // Get product by slug
 export async function getBySlug(parentValue, { slug }) {
   const product = await models.Product.findOne({ where: { slug } })
