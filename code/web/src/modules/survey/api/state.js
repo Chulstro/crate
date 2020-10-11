@@ -7,6 +7,8 @@ import {
   /* all the other actions */ 
 } from './actions';
 
+const surveyInitialState = {};
+
 export default (state = surveyInitialState, action) => {
   switch (action.type) {
     case GET_MENS_CLOTHING: 

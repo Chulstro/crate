@@ -23,3 +23,7 @@ export const moveBackward = () => {
   // handles navigation backward through survey
 }
 
+export const fetchItems = () => {
+  // gets images, conditional based on which crate is clicked on?
+}
+

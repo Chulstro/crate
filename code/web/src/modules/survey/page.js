@@ -17,9 +17,10 @@ import { H3 } from '../../ui/typography'
 import { grey, grey2 } from '../../ui/common/colors'
 
 // Want to have Loading handy
-
 import Loading from "../common/Loading";
+
 // import actions needed for navigation and fetches as well
+import { moveForward, moveBackward, fetchItems } from './api/actions';
 
 // We'll need to use mapState && mapDispatch for the clothing images, as well as
 // an indicator for which screen we should be on - the instructions screen, each
@@ -34,14 +35,6 @@ class Page extends PureComponent {
 
   componentDidMount = () => {
     // fetches images for correct crate
-  }
-
-  moveForward = () => {
-    // sets state to change the view for conditional render
-  }
-
-  moveBackward = () => {
-    // similar to moveForward
   }
 
   render = () => {
