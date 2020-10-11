@@ -40,7 +40,7 @@ class StylePreferences extends PureComponent {
   }
 
   moveBackward = () => {
-    // similar to moveForward... but backwards
+    // similar to moveForward
   }
 
   render = () => {
