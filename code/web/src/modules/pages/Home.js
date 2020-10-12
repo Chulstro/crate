@@ -26,7 +26,7 @@ import Onboarding from './Onboarding'
 const Home = (props) => (
   <div>
     {/* Home */}
-    //Grid is a component where many alignment choices are already preset.
+    {/*Grid is a component where many alignment choices are already preset.*/}
     <Grid alignCenter={true} style={{
       backgroundImage: `url('${ APP_URL }/images/cover.jpg')`,
       backgroundAttachment: 'fixed',
@@ -38,15 +38,15 @@ const Home = (props) => (
       color: white
     }}>
       {/* SEO */}
-      //Helmet is brought in by a package - it's a head manager and can change several different tags including title and meta.
+      {/*Helmet is brought in by a package - it's a head manager and can change several different tags including title and meta.*/}
       <Helmet>
         <title>Monthly supply of clothes and accessories for Men and Women - Crate</title>
       </Helmet>
 
       {/* Content */}
-      //GridCell is a styled component created to fit into a Grid component. Ironically, they use flexbox.
+      {/*GridCell is a styled component created to fit into a Grid component. Ironically, they use flexbox.*/}
       <GridCell>
-      //Each header size already has a component made in the ui folder setting up their exact styling.
+      {/*Each header size already has a component made in the ui folder setting up their exact styling.*/}
         <H1 font="secondary" style={{ textShadow: textLevel1 }}>Crate</H1>
 
         <H4 style={{ textShadow: textLevel1, marginTop: '0.5em' }}>

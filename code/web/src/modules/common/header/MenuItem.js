@@ -9,10 +9,14 @@ import { primary, secondary } from '../../../ui/common/gradients'
 import { level1 } from '../../../ui/common/shadows'
 
 // Component
+
 const MenuItem = (props) => {
+//This line separates the props for clarity.
   const { children, to, type, active, style, section } = props
 
+//This function compares pathname endpoints of the current endpoint and the endpoint of the menuItem.
   const isActiveRoute = () => {
+    //I like how they split the pathname at the / ; it splits it into domain name and endpoint. Not sure how this would work for stacking endpoints though.
     const currentSection = props.location.pathname.split('/')[1]
 
     return (currentSection === to.split('/')[1] && currentSection === section)
@@ -21,6 +25,7 @@ const MenuItem = (props) => {
   }
 
   return (
+    //The menuItem component returns this:
     <Link
       to={to}
       style={

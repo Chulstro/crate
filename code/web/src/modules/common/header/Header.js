@@ -35,7 +35,6 @@ const Header = (props) => {
         <GridCell>
           {/* Logo */}
           <Logo style={{ float: 'left' }}/>
-
           {/* Left menu */}
           <Menu style={{ float: 'left', marginTop: '0.5em', marginLeft: '2em' }}>
             <MenuItem to={home.men.path}>Men</MenuItem>

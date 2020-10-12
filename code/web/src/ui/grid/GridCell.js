@@ -18,7 +18,8 @@ const GridCell = (props) => {
   return (
     <div {...others}>
       {children}
-
+      {/*This sets up a default flexbox stylesheet for elements of the grid. this
+        sets up different content alignment based on props passed down.*/}
       {/* language=CSS */}
       <style jsx>{`
         div {

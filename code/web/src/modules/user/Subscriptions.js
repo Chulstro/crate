@@ -51,6 +51,11 @@ class Subscriptions extends PureComponent {
         <Grid>
           <GridCell>
             {
+              //This block determines whether the page is loading or not.
+              //If it is, it creates a loading component until it isn't.
+              //Once it isn't, it checks to see if the user has any current subscriptions.
+              //If the user does, it creates a subscriptionItem component for each of them.
+              //If not, it renders an emptyMessage component.
               this.props.subscriptions.isLoading
                 ? <Loading/>
                 : this.props.subscriptions.list.length > 0
