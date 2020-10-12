@@ -16,6 +16,10 @@ export const CRATES_GET_FAILURE = 'CRATES/GET_FAILURE'
 // Actions
 
 // Get list of crates
+//Uses the action types for crates list that changes isLoading and error message based on respose success/failure
+// axios post takes in a route and a query objects
+// returned promise from post takes the response obj and assigns it to list that is dispatched to store
+// i think we will need something similiar for style request 
 export function getList(orderBy = 'DESC', isLoading = true) {
   return dispatch => {
     dispatch({
@@ -104,6 +108,8 @@ export function createOrUpdate(crate) {
 }
 
 // Create crate
+// this is where crate is created based on crate id. Id comes from routeApi?
+// mutation is a change, so a change via post
 export function create(variables) {
   return dispatch => {
     return axios.post(routeApi, mutation({

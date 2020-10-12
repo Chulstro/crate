@@ -28,20 +28,26 @@ class Item extends PureComponent {
     }
   }
 
+  // when a user click subscribe 
   onClickSubscribe = (crateId) => {
     this.setState({
       isLoading: true
     })
-
+    // check to see if the user has a style 
+      //- if not, let user subscribe and route to style form
+      // - if they do, allow user to change style?
+    // message shows user it is subscribing for them
     this.props.messageShow('Subscribing, please wait...')
-
+    // console.log("***", this.props)
+    // create action below from props state, pass in crate id based on click and post it 
+    // if no errors, show message saying success
     this.props.create({ crateId })
       .then(response => {
         if (response.data.errors && response.data.errors.length > 0) {
           this.props.messageShow(response.data.errors[0].message)
         } else {
           this.props.messageShow('Subscribed successfully.')
-
+          // if subsc successful, adds the subscrption path to history
           this.props.history.push(userRoutes.subscriptions.path)
         }
       })
@@ -58,7 +64,8 @@ class Item extends PureComponent {
         }, 5000)
       })
   }
-
+// render indv cards below
+// isLoading disables mult clicks
   render() {
     const { id, name, description } = this.props.crate
     const { isLoading } = this.state
@@ -104,5 +111,6 @@ function itemState(state) {
     user: state.user
   }
 }
-
+// custom names for mapStateToProps, destructured functions
+// look into dispatch more
 export default connect(itemState, { create, messageShow, messageHide })(withRouter(Item))
