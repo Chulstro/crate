@@ -23,6 +23,7 @@ import admin from '../../../setup/routes/admin'
 class List extends PureComponent {
 
   // Runs on server only for SSR
+  // what does static do?
   static fetchData({ store }) {
     return store.dispatch(getCrateList('DESC'))
   }
@@ -31,7 +32,7 @@ class List extends PureComponent {
   componentDidMount() {
     this.props.getCrateList('DESC')
   }
-
+  // remove crate based on id, calls removeCrate and displays message and users crates
   remove = (id) => {
     if (id > 0) {
       let check = confirm('Are you sure you want to delete this crate?')

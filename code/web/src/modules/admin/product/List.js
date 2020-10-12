@@ -29,10 +29,11 @@ class List extends PureComponent {
   }
 
   // Runs on client only
+  // get list of crates, asceding order
   componentDidMount() {
     this.props.getProductList()
   }
-
+// remove from list based on id
   remove = (id) => {
     if (id > 0) {
       let check = confirm('Are you sure you want to delete this product?')
@@ -70,7 +71,7 @@ class List extends PureComponent {
       }
     }
   }
-
+  //admin link path
   render() {
     const { isLoading, list } = this.props.products
 
