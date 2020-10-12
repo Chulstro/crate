@@ -19,6 +19,8 @@ import CrateItem from './Item'
 class List extends PureComponent {
 
   // Runs on server only for SSR
+  // getList from actions. Why change name?
+  // what is orderBy? "ASC" vs "DESC" ascending and descending sort?
   static fetchData({ store }) {
     return store.dispatch(getCratesList('ASC'))
   }
@@ -27,7 +29,7 @@ class List extends PureComponent {
   componentDidMount() {
     this.props.getCratesList('ASC')
   }
-
+// 
   render() {
     return (
       <div>
@@ -74,6 +76,7 @@ List.propTypes = {
 }
 
 // Component State
+// store has crates
 function listState(state) {
   return {
     crates: state.crates

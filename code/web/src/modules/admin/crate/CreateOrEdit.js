@@ -46,7 +46,7 @@ class CreateOrEdit extends Component {
     // Get crate details (edit case)
     this.getCrate(parseInt(this.props.match.params.id))
   }
-
+// get crate based on id, based on click
   getCrate = (crateId) => {
     if (crateId > 0) {
       this.props.getCrateById(crateId)

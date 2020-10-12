@@ -11,7 +11,9 @@ import { level1 } from '../../../ui/common/shadows'
 // Component
 const MenuItem = (props) => {
   const { children, to, type, active, style, section } = props
-
+// Object.assign adds properties to created object, 
+// style based on current router
+// pass children 
   const isActiveRoute = () => {
     const currentSection = props.location.pathname.split('/')[1]
 
