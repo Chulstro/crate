@@ -5,6 +5,8 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 import { ProductType } from './types'
 import { create, update, remove } from './resolvers'
 
+// ADD STYLE COLUMN TO ALL CRUD
+
 // Product create
 export const productCreate = {
   type: ProductType,

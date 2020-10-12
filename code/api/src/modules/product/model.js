@@ -22,4 +22,5 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
+  // Add relationship belongsTo for StyleType
 }

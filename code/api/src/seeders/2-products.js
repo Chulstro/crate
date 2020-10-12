@@ -2,6 +2,8 @@
 
 const params = require('../config/params');
 
+// THESE WILL ALL NEED STYLE IDS
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('products', [

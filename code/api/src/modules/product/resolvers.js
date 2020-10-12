@@ -1,3 +1,5 @@
+// All logic for formatting sample info to send to FE will be done here in function called getSurvey
+
 // App Imports
 import params from '../../config/params'
 import models from '../../setup/models'

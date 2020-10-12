@@ -1,6 +1,8 @@
 // Imports
 import { GraphQLString, GraphQLInt } from 'graphql'
 
+// Will need to run through the update functionality of user
+
 // App Imports
 import { UserType } from './types'
 import { create, remove } from './resolvers'

@@ -43,3 +43,5 @@ export const productTypes = {
   type: new GraphQLList(ProductTypesType),
   resolve: getTypes
 }
+
+//PRODUCT BY STYLE, ACCESSORY, AND ARTICLE
