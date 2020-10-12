@@ -7,7 +7,7 @@ import Page from '../../modules/survey/Page';
 
 export default {
   survey: {
-    path: 'style/preferences',
+    path: '/style-preferences',
     component: Page
   }
 }
