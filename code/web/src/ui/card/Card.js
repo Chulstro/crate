@@ -5,9 +5,10 @@ import React from 'react'
 import { level1 } from '../common/shadows'
 
 // Component
+// diff subscriptions, rendered by item.js
 const Card = (props) => {
   const { children, ...other } = props
-
+console.log(props)
   return (
     <div {...other}>
       {children}

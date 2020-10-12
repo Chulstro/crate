@@ -15,7 +15,8 @@ import { routeImage, routes } from '../../setup/routes'
 const Item = (props) => {
 
   const { name, slug, description, image } = props.product
-
+// slug again
+// renders Card, what subscription cards are
   return (
     <Link to={routes.product.path(slug)}>
       <Card style={{ width: '25em', margin: '2.5em auto', backgroundColor: white }}>
