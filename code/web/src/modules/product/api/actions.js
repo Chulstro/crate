@@ -215,8 +215,11 @@ export function getTypes() {
 }
 
 // Get all products for survey
-export function getProductsForSurvey(crateName) {
-  return dispatch => {
-    
-  }
-}
+// Note: Need to use axios.post because we are using GraphQL
+// export function getProductsForSurvey(crate) {
+//
+//   return dispatch => {
+//     return axios.post...
+//      --> all of this will need to be filled out with the logic
+//   }
+// }
