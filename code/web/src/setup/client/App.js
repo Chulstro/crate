@@ -7,7 +7,8 @@ import { routes } from '../../setup/routes'
 import Layout from '../../modules/common/Layout'
 import NotFound from '../../modules/common/NotFound'
 import RoutePrivate from '../../modules/auth/RoutePrivate'
-
+//route objects are being converted to array and mapped here.
+//if a string print or if its a func run
 const App = () => (
   <Layout>
     <Switch>

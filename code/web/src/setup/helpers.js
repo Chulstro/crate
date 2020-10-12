@@ -45,6 +45,8 @@ export function isEmpty(obj) {
 }
 
 // Slug
+// found the slug
+// 
 export function slug(text) {
   return text.toString().toLowerCase()
     .replace(/\s+/g, '-')           // Replace spaces with -
