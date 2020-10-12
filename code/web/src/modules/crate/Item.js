@@ -40,13 +40,16 @@ class Item extends PureComponent {
     // displays pop up
     this.props.messageShow('Subscribing, please wait...')
 
+    // Creates the subscription
     this.props.create({ crateId })
       .then(response => {
+        // if there's an error, display it
         if (response.data.errors && response.data.errors.length > 0) {
           this.props.messageShow(response.data.errors[0].message)
         } else {
+          // if not, display the pop up in the bottom right
           this.props.messageShow('Subscribed successfully.')
-
+          // and add the path /user/subscriptions to the browser history manually
           this.props.history.push(userRoutes.subscriptions.path)
         }
       })
@@ -54,10 +57,11 @@ class Item extends PureComponent {
         this.props.messageShow('There was some error subscribing to this crate. Please try again.')
       })
       .then(() => {
+        // sets loading to false, to adjust page styling accordingly
         this.setState({
           isLoading: false
         })
-
+        // after 5 seconds, hide the popup
         window.setTimeout(() => {
           this.props.messageHide()
         }, 5000)
