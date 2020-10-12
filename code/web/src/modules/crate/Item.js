@@ -69,6 +69,7 @@ class Item extends PureComponent {
   }
 
   render() {
+    // deconstructs all necessary props/info needed to render the crate item
     const { id, name, description } = this.props.crate
     const { isLoading } = this.state
 
