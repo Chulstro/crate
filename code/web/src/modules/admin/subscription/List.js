@@ -27,6 +27,9 @@ class List extends PureComponent {
     this.props.getSubscriptionsList('DESC')
   }
 
+  // helmets are style elements w seo things
+  // the gridcells are a style element w seo things
+  // if list length then map thru to display
   render() {
     const { isLoading, list } = this.props.subscriptions
 
@@ -102,6 +105,7 @@ List.propTypes = {
   messageHide: PropTypes.func.isRequired
 }
 
+// store gives us subscriptions
 // Component State
 function listState(state) {
   return {
