@@ -1,6 +1,9 @@
 'use strict'
 
-// User
+// User Model
+// User will have many user_styles
+// User will have many styles, through user_styles
+
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {
     name: {

@@ -5,6 +5,8 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 import CrateType from './types'
 import { create, remove, update } from './resolvers'
 
+// 'CUD' methods for Crate: create, update, destroy
+
 // Crate create
 export const crateCreate = {
   type: CrateType,

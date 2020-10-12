@@ -1,6 +1,7 @@
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
+// Product GraphQL object
 // Product type
 const ProductType = new GraphQLObjectType({
   name: 'product',
@@ -29,5 +30,7 @@ const ProductTypesType = new GraphQLObjectType({
     name: { type: GraphQLString }
   })
 })
+
+// We will want to add a Product type to getProductsForSurvey
 
 export { ProductType, ProductTypesType }

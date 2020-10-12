@@ -5,6 +5,9 @@ import { GraphQLInt, GraphQLList } from 'graphql'
 import SubscriptionType from './types'
 import { getAll, getByUser, get } from './resolvers'
 
+// Index for subscriptions
+// Show pages for subscriptions by ID and by User
+
 // Subscriptions All
 export const subscriptions = {
   type: new GraphQLList(SubscriptionType),

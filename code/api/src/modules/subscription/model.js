@@ -1,6 +1,6 @@
 'use strict'
 
-// Subscription
+// Subscription Model
 module.exports = function(sequelize, DataTypes) {
   let Subscription = sequelize.define('subscriptions', {
     userId: {

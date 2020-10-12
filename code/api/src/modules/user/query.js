@@ -5,6 +5,8 @@ import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 import { UserType, UserLoginType, UserGenderType } from './types'
 import { getAll, getById, login, getGenders } from './resolvers'
 
+// User methods: index, show, login, getGenders
+
 // All
 export const users = {
   type: new GraphQLList(UserType),
@@ -21,6 +23,7 @@ export const user = {
 }
 
 // Auth
+// User authorization
 export const userLogin = {
   type: UserLoginType,
   args: {

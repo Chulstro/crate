@@ -5,6 +5,9 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 import { UserType } from './types'
 import { create, remove } from './resolvers'
 
+// Create and delete methods for User
+// Note - why is there no update method?
+
 // Create
 export const userSignup = {
   type: UserType,

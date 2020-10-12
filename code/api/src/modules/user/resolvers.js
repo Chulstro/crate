@@ -7,6 +7,9 @@ import serverConfig from '../../config/server'
 import params from '../../config/params'
 import models from '../../setup/models'
 
+// CRD Functions for User
+// The functions names are the calls made to the BE by FE
+
 // Create
 export async function create(parentValue, { name, email, password }) {
   // Users exists with same email check
