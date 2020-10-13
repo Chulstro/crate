@@ -23,14 +23,18 @@ class Survey extends PureComponent {
 
   render() {
     return(
-      <Grid style={{ backgroundColor: grey }}>
-        <GridCell style={{ textAlign: "center", color: "green" }}>
-          <H4>WELCOME TO THE DRAMARAMA!</H4>
-        </GridCell>
-        <GridCell style={{ textAlign: "center" }}>
-        <Button theme="primary">Click Here!</Button>
-        </GridCell>
-      </Grid>
+      <div>
+        <Grid style={{height}}>
+          <GridCell style={{ textAlign: "center", alignCenter: true }}>
+            <H4>WELCOME TO THE DRAMARAMA!</H4>
+          </GridCell>
+        </Grid>
+        <Grid>
+          <GridCell style={{ textAlign: "center" }}>
+            <Button theme="primary" style={{ alignBottom: true }}>Click Here!</Button>
+          </GridCell>
+        </Grid>
+      </div>
     )
   }
 }
