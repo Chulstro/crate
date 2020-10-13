@@ -7,6 +7,7 @@ import { Grid, GridCell } from '../../ui/grid'
 import Button from '../../ui/button'
 import ImageTile from '../../ui/image/Tile'
 import H4 from '../../ui/typography/H4'
+import { grey, grey2 } from '../../ui/common/colors'
 
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
@@ -22,7 +23,14 @@ class Survey extends PureComponent {
 
   render() {
     return(
-      <H4>WELCOME TO THE DRAMARAMA!</H4>
+      <Grid style={{ backgroundColor: grey }}>
+        <GridCell style={{ textAlign: "center", color: "green" }}>
+          <H4>WELCOME TO THE DRAMARAMA!</H4>
+        </GridCell>
+        <GridCell style={{ textAlign: "center" }}>
+        <Button theme="primary">Click Here!</Button>
+        </GridCell>
+      </Grid>
     )
   }
 }
