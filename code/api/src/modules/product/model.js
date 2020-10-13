@@ -22,11 +22,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
-}
 
-Product.associate = function(models) {
-  Product.belongsTo(models.Style)
-}
 
-return Product
+  Product.associate = function(models) {
+    Product.belongsTo(models.Style)
+  }
+ return Product
 }
