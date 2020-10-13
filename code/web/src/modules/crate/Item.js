@@ -42,7 +42,7 @@ class Item extends PureComponent {
         } else {
           this.props.messageShow('Subscribed successfully.')
 
-          this.props.history.push(userRoutes.subscriptions.path)
+          // this.props.history.push(userRoutes.subscriptions.path)
         }
       })
       .catch(error => {
@@ -75,14 +75,16 @@ class Item extends PureComponent {
           <p style={{ color: grey2, marginTop: '1em' }}>{description}</p>
 
           <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-            <Button
-              theme="primary"
-              onClick={this.onClickSubscribe.bind(this, id)}
-              type="button"
-              disabled={ isLoading }
-            >
+            <Link to='/user/style-preferences'>
+              <Button
+                theme="primary"
+                onClick={this.onClickSubscribe.bind(this, id)}
+                type="button"
+                disabled={ isLoading }
+              >
               <Icon size={1.2} style={{ color: white }}>add</Icon> Subscribe
-            </Button>
+              </Button>
+            </Link>
           </p>
         </div>
       </Card>
