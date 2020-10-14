@@ -161,6 +161,73 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      //Casual
+      {
+        name: 'Casual Watch',
+        slug: 'casual-watch',
+        description: 'Simple but effective design',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/casual_watch.jpg',
+        styleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Casual Watch',
+        slug: 'casual-watch',
+        description: 'Simple but effective design',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/casual_watch.jpg',
+        styleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Casual Womens Top',
+        slug: 'casual-top-female',
+        description: 'Simple but elegant',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/casual_top_female.jpg',
+        styleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Casual Mens Top',
+        slug: 'casual-top-male',
+        description: 'Simple and comfortable',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/casual_top_male.jpg',
+        styleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Casual Womens Pants',
+        slug: 'casual-pants-female',
+        description: 'Functional and great',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/casual_pants_female.jpeg',
+        styleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Casual Mens Pants',
+        slug: 'casual-pants-male',
+        description: 'Functional and great for friday',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/casual_pants_male.jpg',
+        styleId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       //Given
       {
         name: 'Belt for Women',
