@@ -33,7 +33,10 @@ class Survey extends PureComponent {
 
         <Grid>
           <GridCell style={{ textAlign: "center" }}>
-            <Button theme="primary" style={{ alignBottom: true, 'marginTop': '3em' }}>
+            <Button 
+              theme="primary"  
+              style={{ alignBottom: true, 'marginTop': '3em' }}
+            >
               Start survey
             </Button>
           </GridCell>
@@ -43,4 +46,10 @@ class Survey extends PureComponent {
   }
 }
 
-export default Survey
+const surveyState = state => {
+  return {
+    clothing: state.clothing
+  }
+}
+
+export default connect(surveyState)(Survey)
