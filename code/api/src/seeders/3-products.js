@@ -52,7 +52,7 @@ module.exports = {
       },
       {
         name: 'Womens Punk Top',
-        slug: 'punk_woman_top',
+        slug: 'punk-woman-top',
         description: 'Straps and leather baby',
         type: params.product.types.cloth.id,
         gender: params.user.gender.female.id,
@@ -63,7 +63,7 @@ module.exports = {
       },
       {
         name: 'Mens Punk Top',
-        slug: 'punk_man_top',
+        slug: 'punk-man-top',
         description: 'Leather as dark as your outlook',
         type: params.product.types.cloth.id,
         gender: params.user.gender.male.id,
@@ -74,7 +74,7 @@ module.exports = {
       },
       {
         name: 'Punk Pants',
-        slug: 'punk_pants',
+        slug: 'punk-pants',
         description: 'Ooooo look at those chains',
         type: params.product.types.cloth.id,
         gender: params.user.gender.male.id,
@@ -85,12 +85,79 @@ module.exports = {
       },
       {
         name: 'Punk Pants',
-        slug: 'punk_pants',
+        slug: 'punk-pants',
         description: 'Ooooo look at those chains',
         type: params.product.types.cloth.id,
         gender: params.user.gender.female.id,
         image: '/images/stock/punk-pants.jpg',
         styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      //Sporty
+      {
+        name: 'Sporty Sunglasses',
+        slug: 'sporty-sunglasses',
+        description: 'Hide your eyes from the awesome',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/sporty_sunglasses.jpg',
+        styleId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Sporty Sunglasses',
+        slug: 'sporty-sunglasses',
+        description: 'Hide your eyes from the awesome',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/sporty_sunglasses.jpg',
+        styleId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Sporty Mens Pants',
+        slug: 'sporty-man-pants',
+        description: 'Sweats for comfort and movement',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/sporty_pants_male.jpg',
+        styleId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Sporty Womens Pants',
+        slug: 'sporty-woman-pants',
+        description: 'High waisted for both comfort and movement',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/sporty_pants_female.jpg',
+        styleId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Sporty Mens Shirt',
+        slug: 'sporty-man-shirt',
+        description: 'Looks good and breathes better',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/sporty_top_male.jpg',
+        styleId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Sporty Womens Shirt',
+        slug: 'sporty-woman-shirt',
+        description: 'Made for ease of movement',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/sporty_top_female.jpg',
+        styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -102,7 +169,6 @@ module.exports = {
         type: params.product.types.accessory.id,
         gender: params.user.gender.female.id,
         image: '/images/stock/belt-female.jpg',
-        styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
