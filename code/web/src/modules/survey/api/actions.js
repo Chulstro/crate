@@ -35,7 +35,7 @@ export const moveForward = () => (
 export const moveBackward = () => (
   dispatch => {
     dispatch({
-      type: MOVE_FORWARD
+      type: MOVE_BACKWARD
     })
   }
 )
