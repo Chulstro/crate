@@ -23,9 +23,9 @@ module.exports = function(sequelize, DataTypes) {
     }
   })
 
-
   Product.associate = function(models) {
-    Product.belongsTo(models.Style);
+    Product.belongsTo(models.Style)
   }
- return Product
+
+  return Product
 }

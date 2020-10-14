@@ -16,6 +16,7 @@ import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
 import { messageShow, messageHide } from '../common/api/actions'
 import { create } from '../subscription/api/actions'
+import { setSurveyType } from '../survey/api/actions'
 
 // Component
 class Item extends PureComponent {
@@ -33,16 +34,17 @@ class Item extends PureComponent {
       isLoading: true
     })
 
-    this.props.messageShow('Subscribing, please wait...')
+    // this.props.messageShow('Subscribing, please wait...')
+    this.props.setSurveyType(crateId)
 
     this.props.create({ crateId })
       .then(response => {
         if (response.data.errors && response.data.errors.length > 0) {
           this.props.messageShow(response.data.errors[0].message)
         } else {
-          this.props.messageShow('Subscribed successfully.')
+          // this.props.messageShow('Subscribed successfully.')
 
-          this.props.history.push(userRoutes.subscriptions.path)
+          // this.props.history.push(userRoutes.subscriptions.path)
         }
       })
       .catch(error => {
@@ -75,14 +77,16 @@ class Item extends PureComponent {
           <p style={{ color: grey2, marginTop: '1em' }}>{description}</p>
 
           <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-            <Button
-              theme="primary"
-              onClick={this.onClickSubscribe.bind(this, id)}
-              type="button"
-              disabled={ isLoading }
-            >
+            <Link to='/user/style-preferences'>
+              <Button
+                theme="primary"
+                onClick={this.onClickSubscribe.bind(this, id)}
+                type="button"
+                disabled={ isLoading }
+              >
               <Icon size={1.2} style={{ color: white }}>add</Icon> Subscribe
-            </Button>
+              </Button>
+            </Link>
           </p>
         </div>
       </Card>
@@ -105,4 +109,4 @@ function itemState(state) {
   }
 }
 
-export default connect(itemState, { create, messageShow, messageHide })(withRouter(Item))
+export default connect(itemState, { create, messageShow, messageHide, setSurveyType })(withRouter(Item))

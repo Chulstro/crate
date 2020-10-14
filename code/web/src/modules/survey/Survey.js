@@ -11,6 +11,7 @@ import { grey, grey2 } from '../../ui/common/colors'
 
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
+import { moveForward, moveBackward } from './api/actions'
 
 class Survey extends PureComponent {
   constructor(props) {
@@ -23,16 +24,35 @@ class Survey extends PureComponent {
 
   render() {
     return(
-      <Grid style={{ backgroundColor: grey }}>
-        <GridCell style={{ textAlign: "center", color: "green" }}>
-          <H4>WELCOME TO THE DRAMARAMA!</H4>
-        </GridCell>
-        <GridCell style={{ textAlign: "center" }}>
-        <Button theme="primary">Click Here!</Button>
-        </GridCell>
-      </Grid>
+      <div>
+        <Grid style={{height: '7em'}}>
+          <GridCell style={{ textAlign: "center", alignCenter: true }}>
+            <H4 style={{'paddingTop': '2em'}}>WELCOME TO THE DRAMARAMA!</H4>
+            <p style={{'marginTop': '1em'}}>Visualize your style.</p>
+          </GridCell>
+        </Grid>
+
+        <Grid>
+          <GridCell style={{ textAlign: "center" }}>
+            <Button 
+              theme="primary"  
+              style={{ alignBottom: true, 'marginTop': '3em' }}
+              onClick={ this.props.moveForward }
+            >
+              Start survey
+            </Button>
+          </GridCell>
+        </Grid>
+      </div>
     )
   }
 }
 
-export default Survey
+const surveyState = state => {
+  return {
+    surveyInfo: state.surveyInfo,
+    currentView: state.surveyInfo.views[state.surveyInfo.currentView]
+  }
+}
+
+export default connect(surveyState, { moveForward })(Survey)
