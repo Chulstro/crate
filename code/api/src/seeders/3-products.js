@@ -5,6 +5,96 @@ const params = require('../config/params');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('products', [
+      //Punk
+      {
+        name: 'Punk Belt',
+        slug: 'belt-thats-punk',
+        description: 'A dark, ringed masterpiece',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/punk-belt.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Punk Belt',
+        slug: 'belt-thats-punk',
+        description: 'A dark, ringed masterpiece',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/punk-belt.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Punk Watch',
+        slug: 'watch-thats-punk',
+        description: 'Grim reminder of your time on earth',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/punk-watch.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Punk Watch',
+        slug: 'watch-thats-punk',
+        description: 'Grim reminder of your time on earth',
+        type: params.product.types.accessory.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/punk-watch.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Womens Punk Top',
+        slug: 'punk_woman_top',
+        description: 'Straps and leather baby',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/punk-top-female.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Mens Punk Top',
+        slug: 'punk_man_top',
+        description: 'Leather as dark as your outlook',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/punk-top-male.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Punk Pants',
+        slug: 'punk_pants',
+        description: 'Ooooo look at those chains',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.male.id,
+        image: '/images/stock/punk-pants.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Punk Pants',
+        slug: 'punk_pants',
+        description: 'Ooooo look at those chains',
+        type: params.product.types.cloth.id,
+        gender: params.user.gender.female.id,
+        image: '/images/stock/punk-pants.jpg',
+        styleId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      //Given
       {
         name: 'Belt for Women',
         slug: 'belt-for-women',
@@ -12,6 +102,7 @@ module.exports = {
         type: params.product.types.accessory.id,
         gender: params.user.gender.female.id,
         image: '/images/stock/belt-female.jpg',
+        styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },

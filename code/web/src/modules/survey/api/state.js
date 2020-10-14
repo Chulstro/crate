@@ -1,7 +1,8 @@
 
 import {
   GET_MENS_CLOTHING,
-  MOVE_FORWARD
+  MOVE_FORWARD,
+  MOVE_BACKWARD
 } from './actions'
 
 const surveyInitialState = {
