@@ -9,7 +9,7 @@ import user from '../modules/user/api/state'
 import * as product from '../modules/product/api/state'
 import * as subscription from '../modules/subscription/api/state'
 import * as crate from '../modules/crate/api/state'
-import * as clothing from '../modules/survey/api/state'
+import * as surveyInfo from '../modules/survey/api/state'
 
 // App Reducer
 const appReducer = combineReducers({
@@ -18,7 +18,7 @@ const appReducer = combineReducers({
   ...product,
   ...subscription,
   ...crate,
-  ...clothing
+  ...surveyInfo
 })
 
 // Root Reducer
