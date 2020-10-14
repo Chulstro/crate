@@ -8,8 +8,7 @@ module.exports = function(sequelize, DataTypes) {
   })
 
   Style.associate = function(models) {
-    // Style.hasMany(models.User) --> aren't we using UserStyle for this?
-    Style.hasMany(models.Product)
+    Style.hasMany(models.Product);
   }
 
   return Style
