@@ -7,7 +7,7 @@ const surveyInitialState = {
   crateId: null,
   isLoading: false,
   error: null,
-  list: []
+  clothingList: []
 }
 
 export const surveyInfo = (state = surveyInitialState, action) => {
