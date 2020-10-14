@@ -11,7 +11,7 @@ import { grey, grey2 } from '../../ui/common/colors'
 
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
-import { moveForward } from './api/actions'
+import { moveForward, moveBackward } from './api/actions'
 
 class Survey extends PureComponent {
   constructor(props) {

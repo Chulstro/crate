@@ -21,6 +21,9 @@ export const surveyInfo = (state = surveyInitialState, action) => {
     case MOVE_FORWARD:
       state.currentView += 1;
       return {...state};
+    case MOVE_BACKWARD:
+      state.currentView -= 1;
+      return {...state};
     default:
       return {...state};
   }
