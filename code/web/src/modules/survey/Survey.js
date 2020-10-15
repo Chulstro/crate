@@ -11,7 +11,7 @@ import { grey, grey2 } from '../../ui/common/colors'
 
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
-import { moveForward, moveBackward } from './api/actions'
+import { moveForward, moveBackward, getImages } from './api/actions'
 
 class Survey extends PureComponent {
   constructor(props) {
@@ -20,7 +20,14 @@ class Survey extends PureComponent {
     this.state = {
       isLoading: false
     }
+    this.startForward = this.startForward.bind(this)
   }
+
+  startForward() {
+    this.props.moveForward()
+    this.props.getImages()
+  }
+
 
   render() {
     return(
@@ -38,7 +45,7 @@ class Survey extends PureComponent {
               <Button 
                 theme="primary"  
                 style={{ alignBottom: true, 'marginTop': '3em' }}
-                onClick={ this.props.moveForward }
+                onClick={ this.startForward }
               >
                 Start survey
               </Button>
@@ -112,4 +119,4 @@ const surveyState = state => {
   }
 }
 
-export default connect(surveyState, { moveForward, moveBackward })(Survey)
+export default connect(surveyState, { moveForward, moveBackward, getImages })(Survey)
