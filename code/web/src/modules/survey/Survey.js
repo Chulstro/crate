@@ -46,6 +46,26 @@ class Survey extends PureComponent {
         </Grid>
         </div>
         }
+        {this.props.currentView !== "survey-start" && this.props.currentView !== "survey-finish" &&
+        <div>
+          <Grid style={{height: '7em'}}>
+            <GridCell style={{ textAlign: "center", alignCenter: true }}>
+              <H4 style={{'paddingTop': '2em'}}>Choose your style</H4>
+            </GridCell>
+          </Grid>
+          <Grid>
+            <GridCell style={{ textAlign: "center" }}>
+              <Button 
+                theme="primary"  
+                style={{ alignBottom: true, 'marginTop': '3em' }}
+                onClick={ this.props.moveForward }
+              >
+                Next Page
+              </Button>
+            </GridCell>
+          </Grid>
+        </div>
+        }
       </div>
     )
   }
