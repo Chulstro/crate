@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import { Grid, GridCell } from '../../ui/grid'
 import Button from '../../ui/button'
@@ -95,13 +95,14 @@ class Survey extends PureComponent {
               >
                 Reset Survey
               </Button>
-              <Button 
-                theme="primary"  
-                style={{ alignBottom: true, 'marginTop': '3em' }}
-                onClick={ this.props.moveBackward }
-              >
-                View Your Subscriptions
-              </Button>
+              <Link to={'/user/subscriptions'}>
+                <Button 
+                  theme="primary"  
+                  style={{ alignBottom: true, 'marginTop': '3em' }}
+                >
+                  View Your Subscriptions
+                </Button>
+              </Link>
             </GridCell>
           </Grid>
         </div>
