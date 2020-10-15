@@ -3,7 +3,8 @@ import {
   GET_MENS_CLOTHING,
   MOVE_FORWARD,
   MOVE_BACKWARD,
-  GET_IMAGES
+  GET_IMAGES,
+  RESET_SURVEY
 } from './actions'
 
 const surveyInitialState = {
@@ -28,6 +29,9 @@ export const surveyInfo = (state = surveyInitialState, action) => {
       return {...state};
     case GET_IMAGES:
       state.clothingList.push(action.item);
+      return {...state}
+    case RESET_SURVEY:
+      state.currentView = 0;
       return {...state}
     default:
       return {...state};
