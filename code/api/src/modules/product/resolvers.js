@@ -97,3 +97,21 @@ export async function remove(parentValue, { id }, { auth }) {
 export async function getTypes() {
   return Object.values(params.product.types)
 }
+
+// Get Survey Products
+export async function getSurvey(parentValue, { sex })  {
+  let userGender = ''
+  if (sex === "male") {
+    userGender = params.user.gender.male.id
+  } else {
+    userGender = params.user.gender.female.id
+  }
+  const styles = models.Style.findAll({ order: [['id', 'ASC']] })
+  const products = models.Product.findAll({ order: [['id', 'DESC']] })
+  // const productGender = await models.Product.findOne({ where: { sex } })
+
+  const sportyClothes = await products.filter(product => product.styleId === 2)
+                                .filter(product => product.gender === userGender)
+
+  return sportyClothes
+}
