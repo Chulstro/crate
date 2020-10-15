@@ -112,4 +112,4 @@ const surveyState = state => {
   }
 }
 
-export default connect(surveyState, { moveForward })(Survey)
+export default connect(surveyState, { moveForward, moveBackward })(Survey)
