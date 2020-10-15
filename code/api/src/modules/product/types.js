@@ -1,5 +1,6 @@
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
+import { StyleType } from '../style/types'
 
 // Product type
 const ProductType = new GraphQLObjectType({
@@ -30,4 +31,24 @@ const ProductTypesType = new GraphQLObjectType({
   })
 })
 
+
+// const ProductSurveyType = new GraphQLObjectType({
+// name: "ProductSurveyType",
+// fields: {
+//     styles: {
+//       type: StyleType,
+//       args: {
+//         name: { type: GraphQLString }
+//       },
+//       resolve(parent, args) {
+//         if (args.id) {
+//           console.log(cars.find(car => car.id == args.id));
+//           return cars.find(car => car.id == args.id);
+//         }
+//         console.log(products);
+//         return cars;
+//       }
+//     }
+//   }
+// });
 export { ProductType, ProductTypesType }

@@ -116,12 +116,12 @@ export async function getSurvey()  {
   const products = models.Product.findAll({ order: [['id', 'DESC']] })
   // const productGender = await models.Product.findOne({ where: { sex } })
 
-  const punkClothes = products.filter(product => product.styleId === 1)
+  const surveyClothes = products.filter(product => product.styleId === 1 || product.styleId === 2 || product.styleId === 3)
                               .filter(product => product.gender === params.user.gender.female.id)
-  const sportyClothes = products.filter(product => product.styleId === 2)
-                                .filter(product => product.gender === params.user.gender.female.id)
-  const casualClothes = products.filter(product => product.styleId === 3)
-                                .filter(product => product.gender === params.user.gender.female.id)
+  // const sportyClothes = products.filter(product => )
+  //                               .filter(product => product.gender === params.user.gender.female.id)
+  // const casualClothes = products.filter(product => product.styleId === 3)
+  //                               .filter(product => product.gender === params.user.gender.female.id)
 
   // const survey = await {
   //   punk: punkClothes,
@@ -130,5 +130,5 @@ export async function getSurvey()  {
   // }
 
   // const survey = new surveyData(punkClothes, sportyClothes, casualClothes);
-  return await punkClothes
+  return await surveyClothes
 }
