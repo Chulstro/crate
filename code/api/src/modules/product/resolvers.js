@@ -98,20 +98,37 @@ export async function getTypes() {
   return Object.values(params.product.types)
 }
 
-// Get Survey Products
-export async function getSurvey(parentValue, { sex })  {
-  let userGender = ''
-  if (sex === "male") {
-    userGender = params.user.gender.male.id
-  } else {
-    userGender = params.user.gender.female.id
+function surveyData(punk, sporty, casual) {
+  this.punk = punk;
+  this.sporty = sporty;
+  this.casual = casual
+
+  return {
+    punk: punk,
+    sporty: sporty,
+    casual: casual
   }
+}
+
+// Get Survey Products
+export async function getSurvey()  {
   const styles = models.Style.findAll({ order: [['id', 'ASC']] })
   const products = models.Product.findAll({ order: [['id', 'DESC']] })
   // const productGender = await models.Product.findOne({ where: { sex } })
 
-  const sportyClothes = await products.filter(product => product.styleId === 2)
-                                .filter(product => product.gender === userGender)
+  const punkClothes = products.filter(product => product.styleId === 1)
+                              .filter(product => product.gender === params.user.gender.female.id)
+  const sportyClothes = products.filter(product => product.styleId === 2)
+                                .filter(product => product.gender === params.user.gender.female.id)
+  const casualClothes = products.filter(product => product.styleId === 3)
+                                .filter(product => product.gender === params.user.gender.female.id)
 
-  return sportyClothes
+  // const survey = await {
+  //   punk: punkClothes,
+  //   sporty: sportyClothes,
+  //   casual: casualClothes
+  // }
+
+  // const survey = new surveyData(punkClothes, sportyClothes, casualClothes);
+  return await punkClothes
 }
