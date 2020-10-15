@@ -16,6 +16,7 @@ export const MOVE_FORWARD = 'SURVEY/MOVE_FORWARD'
 export const MOVE_BACKWARD = 'SURVEY/MOVE_BACKWARD'
 // export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
 export const GET_IMAGES = 'SURVEY/GET_IMAGES'
+export const RESET_SURVEY = 'SURVEY/RESET_SURVEY'
 
 export const setSurveyType = crateId => (
   dispatch => {
@@ -64,3 +65,10 @@ export const getImages = () => (
   }
 )
 
+export const resetSurvey = () => (
+  dispatch => {
+    dispatch({
+      type: RESET_SURVEY
+    })
+  }
+)
