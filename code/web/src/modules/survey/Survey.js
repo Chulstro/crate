@@ -25,13 +25,14 @@ class Survey extends PureComponent {
   render() {
     return(
       <div>
-        <Grid style={{height: '7em'}}>
+        {this.props.currentView === "survey-start" && 
+        <div>
+          <Grid style={{height: '7em'}}>
           <GridCell style={{ textAlign: "center", alignCenter: true }}>
             <H4 style={{'paddingTop': '2em'}}>WELCOME TO THE DRAMARAMA!</H4>
             <p style={{'marginTop': '1em'}}>Visualize your style.</p>
           </GridCell>
         </Grid>
-
         <Grid>
           <GridCell style={{ textAlign: "center" }}>
             <Button 
@@ -43,6 +44,8 @@ class Survey extends PureComponent {
             </Button>
           </GridCell>
         </Grid>
+        </div>
+        }
       </div>
     )
   }
