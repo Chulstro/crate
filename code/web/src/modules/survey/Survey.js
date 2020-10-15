@@ -25,7 +25,7 @@ class Survey extends PureComponent {
 
   startForward() {
     this.props.moveForward()
-    this.props.getImages()
+    // this.props.getImages()
   }
 
   render() {
