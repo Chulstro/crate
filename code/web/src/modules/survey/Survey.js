@@ -28,22 +28,22 @@ class Survey extends PureComponent {
         {this.props.currentView === "survey-start" && 
         <div>
           <Grid style={{height: '7em'}}>
-          <GridCell style={{ textAlign: "center", alignCenter: true }}>
-            <H4 style={{'paddingTop': '2em'}}>WELCOME TO THE DRAMARAMA!</H4>
-            <p style={{'marginTop': '1em'}}>Visualize your style.</p>
-          </GridCell>
-        </Grid>
-        <Grid>
-          <GridCell style={{ textAlign: "center" }}>
-            <Button 
-              theme="primary"  
-              style={{ alignBottom: true, 'marginTop': '3em' }}
-              onClick={ this.props.moveForward }
-            >
-              Start survey
-            </Button>
-          </GridCell>
-        </Grid>
+            <GridCell style={{ textAlign: "center", alignCenter: true }}>
+              <H4 style={{'paddingTop': '2em'}}>WELCOME TO THE DRAMARAMA!</H4>
+              <p style={{'marginTop': '1em'}}>Visualize your style.</p>
+            </GridCell>
+          </Grid>
+          <Grid>
+            <GridCell style={{ textAlign: "center" }}>
+              <Button 
+                theme="primary"  
+                style={{ alignBottom: true, 'marginTop': '3em' }}
+                onClick={ this.props.moveForward }
+              >
+                Start survey
+              </Button>
+            </GridCell>
+          </Grid>
         </div>
         }
         {this.props.currentView !== "survey-start" && this.props.currentView !== "survey-finish" &&
@@ -58,6 +58,13 @@ class Survey extends PureComponent {
               <Button 
                 theme="primary"  
                 style={{ alignBottom: true, 'marginTop': '3em' }}
+                onClick={ this.props.moveBackward }
+              >
+                Previous Page
+              </Button>
+              <Button 
+                theme="primary"  
+                style={{ alignBottom: true, 'marginTop': '3em' }}
                 onClick={ this.props.moveForward }
               >
                 Next Page
@@ -66,6 +73,7 @@ class Survey extends PureComponent {
           </Grid>
         </div>
         }
+        
       </div>
     )
   }
