@@ -14,7 +14,7 @@ export const SELECT_CLOTHING = 'SURVEY/SELECT_CLOTHING'
 // export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
 // export const GET_IMAGES = 'SURVEY/GET_IMAGES'
 
-export const setSurveyType = crateId => (
+export const startSurvey = crateId => (
   dispatch => {
     axios.post(routeApi, query({
       operation: 'surveyProducts',
