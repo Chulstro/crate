@@ -35,8 +35,8 @@ class Survey extends PureComponent {
     return this.props.surveyInfo.clothingList.map(product => {
       return (
         <GridCell>
-          <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.name.split(" ").join("")} Card`} onClick={this.selectProduct}>
-            <img src={product.image} alt={product.name} style={{ width: '100%' }}/>
+          <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.id} Card`} onClick={this.selectProduct}>
+            <img src={product.image} alt={product.image.substring(14)} style={{ width: '100%' }}/>
           </Card>
         </GridCell>
       )
