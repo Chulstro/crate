@@ -1,25 +1,41 @@
 
 import {
-  GET_MENS_CLOTHING,
+  GET_CLOTHING,
   MOVE_FORWARD,
   MOVE_BACKWARD,
   // GET_IMAGES,
-  RESET_SURVEY
+  RESET_SURVEY,
+  SELECT_CLOTHING
 } from './actions'
 
 const surveyInitialState = {
-  views: ['survey-start', 'tops', 'bottoms', 'accessories', 'shoes', 'survey-finish'],
+  views: ['survey-start'],
   currentView: 0,
   crateId: null,
   isLoading: false,
   error: null,
-  clothingList: []
+  clothingList: [],
+  selectedClothing: {}
 }
 
 export const surveyInfo = (state = surveyInitialState, action) => {
   switch (action.type) {
-    case GET_MENS_CLOTHING:
+    case GET_CLOTHING:
       state.crateId = action.crateId;
+      state.clothingList = action.products;
+      // const types = action.products.reduce((typeArray, product) => {
+      //   if (!typeArray.includes(product.type)) {
+      //     typeArray.push(product.type)
+      //   }
+      //   return typeArray
+      // }, [])
+      // types.forEach(type => state.views.push(type));
+      state.views.push("middle");
+      state.views.push("survey-finish");
+      return {...state};
+    case SELECT_CLOTHING:
+      state.selectedClothing[state.views.[state.currentView]] = action.clothingStyle;
+      console.log(state);
       return {...state};
     case MOVE_FORWARD:
       state.currentView += 1;
