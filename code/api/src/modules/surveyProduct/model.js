@@ -1,6 +1,6 @@
 'use strict'
 
-// SurveyImages
+// SurveyProducts
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('surveyProducts', {
     styleId: {

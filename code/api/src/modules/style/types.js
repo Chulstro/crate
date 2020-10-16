@@ -12,3 +12,5 @@ const StyleType = new GraphQLObjectType({
     updatedAt: { type: GraphQLString }
   })
 })
+
+export { StyleType }
