@@ -21,20 +21,21 @@ const surveyInitialState = {
 export const surveyInfo = (state = surveyInitialState, action) => {
   switch (action.type) {
     case GET_CLOTHING:
+      const types = action.products.reduce((typeArray, product) => {
+        if (!typeArray.includes(product.category)) {
+          typeArray.push(product.category)
+        }
+        return typeArray
+      }, [])
+
       state.crateId = action.crateId;
       state.clothingList = action.products;
-      // const types = action.products.reduce((typeArray, product) => {
-      //   if (!typeArray.includes(product.type)) {
-      //     typeArray.push(product.type)
-      //   }
-      //   return typeArray
-      // }, [])
-      // types.forEach(type => state.views.push(type));
-      state.views.push("middle");
+      types.forEach(type => state.views.push(type));
       state.views.push("survey-finish");
+
       return {...state};
     case SELECT_CLOTHING:
-      state.selectedClothing[state.views.[state.currentView]] = action.clothingStyle;
+      state.selectedClothing[state.views[state.currentView]] = action.clothingStyle;
       console.log(state);
       return {...state};
     case MOVE_FORWARD:

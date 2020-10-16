@@ -46,7 +46,7 @@ class Survey extends PureComponent {
   selectProduct(event) {
     const card = event.target.closest('.Card');
     console.log(card);
-    if(!Object.keys(this.props.surveyInfo.selectedClothing).includes(this.props.surveyInfo.views[this.props.surveyInfo.currentView])) {
+    if (!Object.keys(this.props.surveyInfo.selectedClothing).includes(this.props.surveyInfo.views[this.props.surveyInfo.currentView])) {
       this.props.selectClothing(event);
       card.style.border = "3px solid magenta";
     }

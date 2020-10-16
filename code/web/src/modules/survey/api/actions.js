@@ -26,7 +26,6 @@ export const setSurveyType = crateId => (
       fields: ['id', 'styleId', 'category', 'image']
     }))
       .then(response => {
-        console.log(response)
         dispatch({
           type: GET_CLOTHING,
           products: response.data.data.surveyProducts,
