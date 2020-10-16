@@ -57,28 +57,6 @@ export const moveBackward = () => (
   }
 )
 
-// export const getProducts = () => (
-//   dispatch => {
-//     dispatch({
-//       type: GET_PRODUCTS
-//       products
-//     })
-//   }
-// )
-
-// export const getImages = () => (
-//   dispatch => {
-//     return axios.get('https://randomfox.ca/images/')
-//       .then(response => {
-//         dispatch({
-//           type: GET_IMAGES,
-//           item: response.data
-//         })
-//       })
-//       .catch(error => console.log(error))
-//   }
-// )
-
 export const resetSurvey = () => (
   dispatch => {
     dispatch({
