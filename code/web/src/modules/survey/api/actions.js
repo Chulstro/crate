@@ -7,17 +7,12 @@ import { routeApi } from '../../../setup/routes'
 
 // Actions Types
 export const GET_CLOTHING = 'SURVEY/GET_CLOTHING'
-export const GET_WOMENS_CLOTHING = 'SURVEY/GET_WOMENS_CLOTHING'
-export const GET_MENS_ACCESSORIES = 'SURVEY/GET_MENS_ACCESSORIES'
-export const GET_WOMENS_ACCESSORIES = 'SURVEY/GET_WOMENS_ACCESSORIES'
-export const GET_ALL_MENS_CLOTHING = 'SURVEY/GET_ALL_MENS_CLOTHING'
-export const GET_ALL_WOMENS_CLOTHING = 'SURVEY/GET_ALL_WOMENS_CLOTHING'
 export const MOVE_FORWARD = 'SURVEY/MOVE_FORWARD'
 export const MOVE_BACKWARD = 'SURVEY/MOVE_BACKWARD'
-// export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
-// export const GET_IMAGES = 'SURVEY/GET_IMAGES'
 export const RESET_SURVEY = 'SURVEY/RESET_SURVEY'
 export const SELECT_CLOTHING = 'SURVEY/SELECT_CLOTHING'
+// export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
+// export const GET_IMAGES = 'SURVEY/GET_IMAGES'
 
 export const setSurveyType = crateId => (
   dispatch => {

@@ -3,7 +3,6 @@ import {
   GET_CLOTHING,
   MOVE_FORWARD,
   MOVE_BACKWARD,
-  // GET_IMAGES,
   RESET_SURVEY,
   SELECT_CLOTHING
 } from './actions'
@@ -36,7 +35,6 @@ export const surveyInfo = (state = surveyInitialState, action) => {
       return {...state};
     case SELECT_CLOTHING:
       state.selectedClothing[state.views[state.currentView]] = action.clothingStyle;
-      console.log(state);
       return {...state};
     case MOVE_FORWARD:
       state.currentView += 1;
@@ -44,9 +42,6 @@ export const surveyInfo = (state = surveyInitialState, action) => {
     case MOVE_BACKWARD:
       state.currentView -= 1;
       return {...state};
-    // case GET_IMAGES:
-    //   state.clothingList.push(action.item);
-    //   return {...state}
     case RESET_SURVEY:
       state.currentView = 0;
       return {...state}
