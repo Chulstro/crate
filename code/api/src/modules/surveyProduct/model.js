@@ -2,7 +2,7 @@
 
 // SurveyProducts
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('surveyProducts', {
+  let SurveyProduct = sequelize.define('surveyProducts', {
     styleId: {
       type: DataTypes.INTEGER
     },
@@ -13,4 +13,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   })
+
+  SurveyProduct.associate = function(models) {
+    SurveyProduct.belongsTo(models.Style);
+  }
+
+  return SurveyProduct
 }

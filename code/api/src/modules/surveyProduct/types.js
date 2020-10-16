@@ -11,7 +11,7 @@ const SurveyProductType = new GraphQLObjectType({
     id: { type: GraphQLInt },
     category: { type: GraphQLString },
     image: { type: GraphQLString },
-    style: { type: StyleType },
+    styleId: { type: GraphQLInt },
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString }
   })
