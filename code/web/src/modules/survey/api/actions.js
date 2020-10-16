@@ -20,11 +20,19 @@ export const RESET_SURVEY = 'SURVEY/RESET_SURVEY'
 
 export const setSurveyType = crateId => (
   dispatch => {
-    dispatch({
-      type: GET_MENS_CLOTHING,
-      crateId
-    })
-  }
+    axios.post(routeApi, query({
+      operation: 'surveyProducts',
+      fields: ['id', 'name', 'image']
+    }))
+      .then(response => {
+        dispatch({
+          type: GET_MENS_CLOTHING,
+          products: response.data.data.surveyProducts,
+          crateId
+        })
+      })
+      .catch(error => console.error(error))
+    }
 )
 
 export const moveForward = () => (
