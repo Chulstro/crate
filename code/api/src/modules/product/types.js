@@ -1,5 +1,6 @@
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
+import { StyleType } from '../style/types'
 
 // Product type
 const ProductType = new GraphQLObjectType({
@@ -29,5 +30,6 @@ const ProductTypesType = new GraphQLObjectType({
     name: { type: GraphQLString }
   })
 })
+
 
 export { ProductType, ProductTypesType }
