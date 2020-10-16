@@ -8,7 +8,7 @@ import {
 } from './actions'
 
 const surveyInitialState = {
-  views: ['survey-start', 'tops', 'bottoms', 'accessories', 'shoes', 'survey-finish'],
+  views: ['survey-start'],
   currentView: 0,
   crateId: null,
   isLoading: false,
@@ -21,7 +21,15 @@ export const surveyInfo = (state = surveyInitialState, action) => {
     case GET_CLOTHING:
       state.crateId = action.crateId;
       state.clothingList = action.products;
-      console.log(action.products);
+      // const types = action.products.reduce((typeArray, product) => {
+      //   if (!typeArray.includes(product.type)) {
+      //     typeArray.push(product.type)
+      //   }
+      //   return typeArray
+      // }, [])
+      // types.forEach(type => state.views.push(type));
+      state.views.push("middle");
+      state.views.push("survey-finish");
       return {...state};
     case MOVE_FORWARD:
       state.currentView += 1;

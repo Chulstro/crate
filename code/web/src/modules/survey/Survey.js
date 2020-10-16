@@ -8,6 +8,7 @@ import Button from '../../ui/button'
 import ImageTile from '../../ui/image/Tile'
 import H4 from '../../ui/typography/H4'
 import { grey, grey2 } from '../../ui/common/colors'
+import Card from '../../ui/card/Card'
 
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
@@ -28,10 +29,26 @@ class Survey extends PureComponent {
     // this.props.getImages()
   }
 
+  renderCards() {
+    return this.props.surveyInfo.clothingList.map(product => {
+      return (
+        <GridCell>
+          <Card style={{ width: '25em', margin: '2.5em auto'}} onClick={this.selectProduct}>
+            <img src={product.image} alt={product.name} style={{ width: '100%' }}/>
+          </Card>
+        </GridCell>
+      )
+    })
+  }
+
+  selectProduct(event) {
+    event.target.style.border = "3px solid magenta";
+  }
+
   render() {
     return(
       <div>
-        {this.props.currentView === "survey-start" && 
+        {this.props.currentView === "survey-start" &&
         <div>
           <Grid style={{height: '7em'}}>
             <GridCell style={{ textAlign: "center", alignCenter: true }}>
@@ -41,8 +58,8 @@ class Survey extends PureComponent {
           </Grid>
           <Grid>
             <GridCell style={{ textAlign: "center" }}>
-              <Button 
-                theme="primary"  
+              <Button
+                theme="primary"
                 style={{ alignBottom: true, 'marginTop': '3em' }}
                 onClick={ this.startForward }
               >
@@ -60,16 +77,19 @@ class Survey extends PureComponent {
             </GridCell>
           </Grid>
           <Grid>
+          {this.renderCards()}
+          </Grid>
+          <Grid>
             <GridCell style={{ textAlign: "center" }}>
-              <Button 
-                theme="primary"  
+              <Button
+                theme="primary"
                 style={{ alignBottom: true, 'marginTop': '3em' }}
                 onClick={ this.props.moveBackward }
               >
                 Previous Page
               </Button>
-              <Button 
-                theme="primary"  
+              <Button
+                theme="primary"
                 style={{ alignBottom: true, 'marginTop': '3em' }}
                 onClick={ this.props.moveForward }
               >
@@ -88,16 +108,16 @@ class Survey extends PureComponent {
           </Grid>
           <Grid>
             <GridCell style={{ textAlign: "center" }}>
-              <Button 
-                theme="primary"  
+              <Button
+                theme="primary"
                 style={{ alignBottom: true, 'marginTop': '3em' }}
                 onClick={ this.props.resetSurvey }
               >
                 Reset Survey
               </Button>
               <Link to={'/user/subscriptions'}>
-                <Button 
-                  theme="primary"  
+                <Button
+                  theme="primary"
                   style={{ alignBottom: true, 'marginTop': '3em' }}
                 >
                   View Your Subscriptions
