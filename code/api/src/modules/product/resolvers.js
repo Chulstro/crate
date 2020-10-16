@@ -97,3 +97,38 @@ export async function remove(parentValue, { id }, { auth }) {
 export async function getTypes() {
   return Object.values(params.product.types)
 }
+
+function surveyData(punk, sporty, casual) {
+  this.punk = punk;
+  this.sporty = sporty;
+  this.casual = casual
+
+  return {
+    punk: punk,
+    sporty: sporty,
+    casual: casual
+  }
+}
+
+// Get Survey Products
+export async function getSurvey()  {
+  const styles = models.Style.findAll({ order: [['id', 'ASC']] })
+  const products = models.Product.findAll({ order: [['id', 'DESC']] })
+  // const productGender = await models.Product.findOne({ where: { sex } })
+
+  const surveyClothes = products.filter(product => product.styleId === 1 || product.styleId === 2 || product.styleId === 3)
+                              .filter(product => product.gender === params.user.gender.female.id)
+  // const sportyClothes = products.filter(product => )
+  //                               .filter(product => product.gender === params.user.gender.female.id)
+  // const casualClothes = products.filter(product => product.styleId === 3)
+  //                               .filter(product => product.gender === params.user.gender.female.id)
+
+  // const survey = await {
+  //   punk: punkClothes,
+  //   sporty: sportyClothes,
+  //   casual: casualClothes
+  // }
+
+  // const survey = new surveyData(punkClothes, sportyClothes, casualClothes);
+  return await surveyClothes
+}
