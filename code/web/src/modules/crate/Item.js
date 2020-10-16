@@ -16,7 +16,7 @@ import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
 import { messageShow, messageHide } from '../common/api/actions'
 import { create } from '../subscription/api/actions'
-import { setSurveyType } from '../survey/api/actions'
+import { startSurvey } from '../survey/api/actions'
 
 // Component
 class Item extends PureComponent {
@@ -35,7 +35,7 @@ class Item extends PureComponent {
     })
 
     // this.props.messageShow('Subscribing, please wait...')
-    this.props.setSurveyType(crateId)
+    this.props.startSurvey(crateId)
 
     this.props.create({ crateId })
       .then(response => {
