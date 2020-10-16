@@ -1,6 +1,6 @@
 
 import {
-  GET_MENS_CLOTHING,
+  GET_CLOTHING,
   MOVE_FORWARD,
   MOVE_BACKWARD,
   // GET_IMAGES,
@@ -18,8 +18,10 @@ const surveyInitialState = {
 
 export const surveyInfo = (state = surveyInitialState, action) => {
   switch (action.type) {
-    case GET_MENS_CLOTHING:
+    case GET_CLOTHING:
       state.crateId = action.crateId;
+      state.clothingList = action.products;
+      console.log(action.products);
       return {...state};
     case MOVE_FORWARD:
       state.currentView += 1;

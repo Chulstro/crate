@@ -6,10 +6,10 @@ import { query, mutation } from 'gql-query-builder'
 import { routeApi } from '../../../setup/routes'
 
 // Actions Types
-export const GET_MENS_CLOTHING = 'SURVEY/GET_MENS_CLOTHING'
+export const GET_CLOTHING = 'SURVEY/GET_CLOTHING'
 export const GET_WOMENS_CLOTHING = 'SURVEY/GET_WOMENS_CLOTHING'
 export const GET_MENS_ACCESSORIES = 'SURVEY/GET_MENS_ACCESSORIES'
-export const GET_WOMENS_ACCESSORIES = 'SURVEY/GET_WOMENS_ACCESSORIES' 
+export const GET_WOMENS_ACCESSORIES = 'SURVEY/GET_WOMENS_ACCESSORIES'
 export const GET_ALL_MENS_CLOTHING = 'SURVEY/GET_ALL_MENS_CLOTHING'
 export const GET_ALL_WOMENS_CLOTHING = 'SURVEY/GET_ALL_WOMENS_CLOTHING'
 export const MOVE_FORWARD = 'SURVEY/MOVE_FORWARD'
@@ -26,7 +26,7 @@ export const setSurveyType = crateId => (
     }))
       .then(response => {
         dispatch({
-          type: GET_MENS_CLOTHING,
+          type: GET_CLOTHING,
           products: response.data.data.surveyProducts,
           crateId
         })
