@@ -33,13 +33,15 @@ class Survey extends PureComponent {
 
   renderCards() {
     return this.props.surveyInfo.clothingList.map(product => {
-      return (
-        <GridCell>
-          <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.id} Card`} onClick={this.selectProduct}>
-            <img src={ APP_URL_API + product.image } alt={product.image.substring(14)} style={{ width: '100%' }}/>
-          </Card>
-        </GridCell>
-      )
+      if (product.category === this.props.surveyInfo.views[this.props.surveyInfo.currentView]) {
+        return (
+          <GridCell>
+            <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.id} Card`} onClick={this.selectProduct}>
+              <img src={ APP_URL_API + product.image } alt={product.image.substring(14)} style={{ width: '100%' }}/>
+            </Card>
+          </GridCell>
+        )
+      }
     })
   }
 
