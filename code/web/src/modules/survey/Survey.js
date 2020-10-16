@@ -10,7 +10,7 @@ import H4 from '../../ui/typography/H4'
 import { grey, grey2 } from '../../ui/common/colors'
 import Card from '../../ui/card/Card'
 
-import { APP_URL } from '../../setup/config/env'
+import { APP_URL_API } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
 import { moveForward, moveBackward, getImages, resetSurvey, selectClothing } from './api/actions'
 
@@ -36,7 +36,7 @@ class Survey extends PureComponent {
       return (
         <GridCell>
           <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.id} Card`} onClick={this.selectProduct}>
-            <img src={product.image} alt={product.image.substring(14)} style={{ width: '100%' }}/>
+            <img src={ APP_URL_API + product.image } alt={product.image.substring(14)} style={{ width: '100%' }}/>
           </Card>
         </GridCell>
       )
