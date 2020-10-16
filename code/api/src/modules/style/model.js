@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
 
   Style.associate = function(models) {
     Style.hasMany(models.Product);
+    Style.hasMany(models.SurveyProduct);
   }
 
   return Style

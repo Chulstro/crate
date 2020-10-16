@@ -21,7 +21,7 @@ class Survey extends PureComponent {
     this.state = {
       isLoading: false
     }
-
+    
     this.startForward = this.startForward.bind(this)
     this.selectProduct = this.selectProduct.bind(this)
   }

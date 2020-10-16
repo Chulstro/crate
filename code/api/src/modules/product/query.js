@@ -44,11 +44,11 @@ export const productTypes = {
   resolve: getTypes
 }
 
-// Products for Survey
-export const surveyProducts = {
-  type: new GraphQLList(ProductType),
-  args: {
-    sex: { type: GraphQLString }
-  },
-  resolve: getSurvey
-}
+// // Products for Survey
+// export const surveyProducts = {
+//   type: new GraphQLList(ProductType),
+//   args: {
+//     sex: { type: GraphQLString }
+//   },
+//   resolve: getSurvey
+// }
