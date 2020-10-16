@@ -23,7 +23,7 @@ export const setSurveyType = crateId => (
   dispatch => {
     axios.post(routeApi, query({
       operation: 'surveyProducts',
-      fields: ['id', 'name', 'image']
+      fields: ['styleId', 'category', 'image']
     }))
       .then(response => {
         dispatch({
@@ -32,7 +32,7 @@ export const setSurveyType = crateId => (
           crateId
         })
       })
-      .catch(error => console.error(error))
+      .catch(error => console.error('There\'s an error'))
     }
 )
 
