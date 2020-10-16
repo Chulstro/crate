@@ -12,7 +12,7 @@ import Card from '../../ui/card/Card'
 
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
-import { moveForward, moveBackward, getImages, resetSurvey } from './api/actions'
+import { moveForward, moveBackward, getImages, resetSurvey, selectClothing } from './api/actions'
 
 class Survey extends PureComponent {
   constructor(props) {
@@ -21,7 +21,9 @@ class Survey extends PureComponent {
     this.state = {
       isLoading: false
     }
+
     this.startForward = this.startForward.bind(this)
+    this.selectProduct = this.selectProduct.bind(this)
   }
 
   startForward() {
@@ -33,7 +35,7 @@ class Survey extends PureComponent {
     return this.props.surveyInfo.clothingList.map(product => {
       return (
         <GridCell>
-          <Card style={{ width: '25em', margin: '2.5em auto'}} onClick={this.selectProduct}>
+          <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.name.split(" ").join("")} Card`} onClick={this.selectProduct}>
             <img src={product.image} alt={product.name} style={{ width: '100%' }}/>
           </Card>
         </GridCell>
@@ -42,7 +44,12 @@ class Survey extends PureComponent {
   }
 
   selectProduct(event) {
-    event.target.style.border = "3px solid magenta";
+    const card = event.target.closest('.Card');
+    console.log(card);
+    if(!Object.keys(this.props.surveyInfo.selectedClothing).includes(this.props.surveyInfo.views[this.props.surveyInfo.currentView])) {
+      this.props.selectClothing(event);
+      card.style.border = "3px solid magenta";
+    }
   }
 
   render() {
@@ -139,4 +146,4 @@ const surveyState = state => {
   }
 }
 
-export default connect(surveyState, { moveForward, moveBackward, getImages, resetSurvey })(Survey)
+export default connect(surveyState, { moveForward, moveBackward, getImages, resetSurvey, selectClothing })(Survey)

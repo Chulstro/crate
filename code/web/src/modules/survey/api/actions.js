@@ -17,6 +17,7 @@ export const MOVE_BACKWARD = 'SURVEY/MOVE_BACKWARD'
 // export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
 // export const GET_IMAGES = 'SURVEY/GET_IMAGES'
 export const RESET_SURVEY = 'SURVEY/RESET_SURVEY'
+export const SELECT_CLOTHING = 'SURVEY/SELECT_CLOTHING'
 
 export const setSurveyType = crateId => (
   dispatch => {
@@ -33,6 +34,16 @@ export const setSurveyType = crateId => (
       })
       .catch(error => console.error(error))
     }
+)
+
+export const selectClothing = event => (
+  dispatch => {
+    console.log(event.target.classList);
+    dispatch({
+      type: SELECT_CLOTHING,
+      clothingStyle: event.target.classList[1]
+    })
+  }
 )
 
 export const moveForward = () => (

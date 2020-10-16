@@ -4,7 +4,8 @@ import {
   MOVE_FORWARD,
   MOVE_BACKWARD,
   // GET_IMAGES,
-  RESET_SURVEY
+  RESET_SURVEY,
+  SELECT_CLOTHING
 } from './actions'
 
 const surveyInitialState = {
@@ -13,7 +14,8 @@ const surveyInitialState = {
   crateId: null,
   isLoading: false,
   error: null,
-  clothingList: []
+  clothingList: [],
+  selectedClothing: {}
 }
 
 export const surveyInfo = (state = surveyInitialState, action) => {
@@ -30,6 +32,10 @@ export const surveyInfo = (state = surveyInitialState, action) => {
       // types.forEach(type => state.views.push(type));
       state.views.push("middle");
       state.views.push("survey-finish");
+      return {...state};
+    case SELECT_CLOTHING:
+      state.selectedClothing[state.views.[state.currentView]] = action.clothingStyle;
+      console.log(state);
       return {...state};
     case MOVE_FORWARD:
       state.currentView += 1;
