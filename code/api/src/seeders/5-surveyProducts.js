@@ -5,56 +5,56 @@ module.exports = {
     return queryInterface.bulkInsert('products', [
       //Punk
       {
-        category: 'belt',
+        category: 'belts',
         image: '/images/stock/punk-belt.jpg',
         styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'belt',
+        category: 'belts',
         image: '/images/stock/punk-belt.jpg',
         styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'watch',
+        category: 'watches',
         image: '/images/stock/punk-watch.jpg',
         styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'watch',
+        category: 'watches',
         image: '/images/stock/punk-watch.jpg',
         styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Womens Punk Top',
+        category: 'tops',
         image: '/images/stock/punk-top-female.jpg',
         styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Mens Punk Top',
+        category: 'tops',
         image: '/images/stock/punk-top-male.jpg',
         styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Punk Pants',
+        category: 'bottoms',
         image: '/images/stock/punk-pants.jpg',
         styleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Punk Pants',
+        category: 'bottoms',
         image: '/images/stock/punk-pants.jpg',
         styleId: 1,
         createdAt: new Date(),
@@ -62,85 +62,86 @@ module.exports = {
       },
       //Sporty
       {
-        category: 'Sporty Sunglasses',
+        category: 'sunglasses',
         image: '/images/stock/sporty_sunglasses.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Sporty Sunglasses',
+        category: 'sunglasses',
         image: '/images/stock/sporty_sunglasses.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Sporty Mens Pants',
+        category: 'bottoms',
         image: '/images/stock/sporty_pants_male.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Sporty Womens Pants',
+        category: 'bottoms',
         image: '/images/stock/sporty_pants_female.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Sporty Mens Shirt',
+        category: 'tops',
         image: '/images/stock/sporty_top_male.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Sporty Womens Shirt',
+        category: 'tops',
         image: '/images/stock/sporty_top_female.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       //Casual
+
       {
-        category: 'Casual Watch',
+        category: 'watches',
         image: '/images/stock/casual_watch.jpg',
         styleId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Casual Watch',
+        category: 'watches',
         image: '/images/stock/casual_watch.jpg',
         styleId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Casual Womens Top',
+        category: 'tops',
         image: '/images/stock/casual_top_female.jpg',
         styleId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Casual Mens Top',
+        category: 'tops',
         image: '/images/stock/casual_top_male.jpg',
         styleId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Casual Womens Pants',
+        category: 'bottoms',
         image: '/images/stock/casual_pants_female.jpeg',
         styleId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Casual Mens Pants',
+        category: 'bottoms',
         image: '/images/stock/casual_pants_male.jpg',
         styleId: 3,
         createdAt: new Date(),
@@ -148,134 +149,117 @@ module.exports = {
       },
       //Formal
 
-      //Given
       {
-        category: 'Belt for Women',
+        category: 'belts',
         image: '/images/stock/belt-female.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Belt for Men',
+        category: 'belts',
         image: '/images/stock/belt-male.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Watch for Women',
+        category: 'watches',
         image: '/images/stock/watch-female.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Watch for Men',
+        category: 'watches',
         image: '/images/stock/watch-male.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Women - Black',
+        category: 'tops',
         image: '/images/stock/t-shirt-female-1.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Women - Grey',
+        category: 'tops',
         image: '/images/stock/t-shirt-female-2.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Men - White',
+        category: 'topse',
         image: '/images/stock/t-shirt-male-1.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Men - Grey',
+        category: 'tops',
         image: '/images/stock/t-shirt-male-2.jpg',
-        styleId: 3,
-
+        styleId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
 
       //Vintage
       {
-        category: 'Belt for Women',
+        category: 'belts',
         image: '/images/stock/belt-female.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Belt for Men',
+        category: 'belts',
         image: '/images/stock/belt-male.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         category: 'Watch for Women',
         image: '/images/stock/watch-female.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'Watch for Men',
+        category: 'watches',
         image: '/images/stock/watch-male.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Women - Black',
+        category: 'tops',
         image: '/images/stock/t-shirt-female-1.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Women - Grey',
+        category: 'tops',
         image: '/images/stock/t-shirt-female-2.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Men - White',
+        category: 'tops',
         image: '/images/stock/t-shirt-male-1.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        category: 'T-Shirt for Men - Grey',
+        category: 'tops',
         image: '/images/stock/t-shirt-male-2.jpg',
-        styleId: 3,
-
+        styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
