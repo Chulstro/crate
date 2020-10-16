@@ -40,7 +40,16 @@ describe ('products queries', () => {
       .get('/')
       .send({ query: '{ product(slug: "belt-for-women") { name }}'})
       .expect(200)
-     console.log(response.body.data)
+
     expect(response.body.data.product.name).toEqual('Belt for Women')
+  })
+
+  it("return product types", async () => {
+    const response = await request(app)
+      .get('/')
+      .send({ query: '{ productTypes { name }}'})
+      .expect(200)
+
+    expect(response.body.data.productTypes[0].name).toEqual('Cloth')
   })
 })
