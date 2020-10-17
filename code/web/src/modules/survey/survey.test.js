@@ -30,4 +30,19 @@ describe('Survey Info', () => {
 
     expect(result.currentView).toEqual(1);
   })
+
+  it('should reset style', () => {
+    const fakeState = {
+        views: ['survey-start', 'tops', 'bottoms', 'accessories', 'shoes', 'survey-finish'],
+        currentView: 2,
+        crateId: null,
+        isLoading: false,
+        error: null,
+        clothingList: []
+      }
+
+    const result = surveyInfo(fakeState, {type: 'SURVEY/RESET_SURVEY'})
+
+    expect(result.currentView).toEqual(0);
+  })
 })
