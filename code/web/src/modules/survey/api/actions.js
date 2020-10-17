@@ -12,6 +12,7 @@ export const MOVE_BACKWARD = 'SURVEY/MOVE_BACKWARD'
 export const RESET_SURVEY = 'SURVEY/RESET_SURVEY'
 export const SELECT_CLOTHING = 'SURVEY/SELECT_CLOTHING'
 export const SUBMIT_SURVEY = 'SURVEY/SUBMIT_SURVEY'
+
 // export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
 // export const GET_IMAGES = 'SURVEY/GET_IMAGES'
 
@@ -34,7 +35,6 @@ export const startSurvey = crateId => (
 
 export const selectClothing = event => (
   dispatch => {
-    console.log(event.target.closest('.Card').classList);
     dispatch({
       type: SELECT_CLOTHING,
       clothingStyle: Number(event.target.closest('.Card').classList[2])
@@ -58,11 +58,19 @@ export const moveBackward = () => (
   }
 )
 
-export const submitSurvey = selectedClothing => (
-  dispatch => {
-    axios.post(routeApi, query({
-      operation: selectedClothing,
-      fields: ['style']
+// need to include userId
+export const submitSurvey = (selectedClothing, userId) => {
+  const surveyData = {
+    selectedClothing, 
+    userId
+  }
+  return dispatch => {
+    axios.post(routeApi, mutation({
+      // opoeration is what connects the backend
+      operation: 'createUserStyle',
+      variable: surveyData,
+      //styleId below, not style
+      fields: ['styleId']
     }))
       .then(response => {
         dispatch({
@@ -72,7 +80,7 @@ export const submitSurvey = selectedClothing => (
       })
       .catch(error => console.error('There\'s an error'))
     }
-)
+  }
 
 export const resetSurvey = () => (
   dispatch => {
