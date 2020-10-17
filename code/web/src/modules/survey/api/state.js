@@ -4,6 +4,7 @@ import {
   MOVE_FORWARD,
   MOVE_BACKWARD,
   RESET_SURVEY,
+  SUBMIT_SURVEY,
   SELECT_CLOTHING
 } from './actions'
 
@@ -46,7 +47,7 @@ export const surveyInfo = (state = surveyInitialState, action) => {
     case RESET_SURVEY:
       state.currentView = 0;
       return {...state}
-    case: SUBMIT_SURVEY:
+    case SUBMIT_SURVEY:
       state.currentView += 1;
       state.userStyle = action.style;
       return {...state};
