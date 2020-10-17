@@ -11,6 +11,7 @@ export const MOVE_FORWARD = 'SURVEY/MOVE_FORWARD'
 export const MOVE_BACKWARD = 'SURVEY/MOVE_BACKWARD'
 export const RESET_SURVEY = 'SURVEY/RESET_SURVEY'
 export const SELECT_CLOTHING = 'SURVEY/SELECT_CLOTHING'
+export const SUBMIT_SURVEY = 'SURVEY/SUBMIT_SURVEY'
 // export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
 // export const GET_IMAGES = 'SURVEY/GET_IMAGES'
 
@@ -33,10 +34,10 @@ export const startSurvey = crateId => (
 
 export const selectClothing = event => (
   dispatch => {
-    console.log(event.target.classList);
+    console.log(event.target.closest('.Card').classList);
     dispatch({
       type: SELECT_CLOTHING,
-      clothingStyle: event.target.classList[1]
+      clothingStyle: Number(event.target.closest('.Card').classList[1])
     })
   }
 )
@@ -53,6 +54,14 @@ export const moveBackward = () => (
   dispatch => {
     dispatch({
       type: MOVE_BACKWARD
+    })
+  }
+)
+
+export const submitSurvey = selectedClothing => (
+  dispatch => {
+    dispatch({
+      type: SUBMIT_SURVEY
     })
   }
 )

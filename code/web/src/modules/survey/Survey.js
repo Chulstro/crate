@@ -12,7 +12,7 @@ import Card from '../../ui/card/Card'
 
 import { APP_URL_API } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
-import { moveForward, moveBackward, getImages, resetSurvey, selectClothing } from './api/actions'
+import { moveForward, moveBackward, getImages, resetSurvey, selectClothing, submitSurvey } from './api/actions'
 
 class Survey extends PureComponent {
   constructor(props) {
@@ -21,14 +21,14 @@ class Survey extends PureComponent {
     this.state = {
       isLoading: false
     }
-    
+
     this.startForward = this.startForward.bind(this)
     this.selectProduct = this.selectProduct.bind(this)
+    this.getResults = this.getResults.bind(this)
   }
 
   startForward() {
     this.props.moveForward()
-    // this.props.getImages()
   }
 
   renderCards() {
@@ -52,6 +52,14 @@ class Survey extends PureComponent {
       this.props.selectClothing(event);
       card.style.border = "3px solid magenta";
     }
+  }
+
+  getResults() {
+    const styleValues = Object.values(this.props.surveyInfo.selectedClothing).reduce((styleValue, clothingStyle) => {
+      styleValue[clothingStyle] += 1;
+      return styleValue;
+    }, {})
+    console.log(styleValues);
   }
 
   render() {
@@ -97,6 +105,16 @@ class Survey extends PureComponent {
               >
                 Previous Page
               </Button>
+              {this.props.surveyInfo.views[this.props.surveyInfo.currentView + 1] === 'survey-finish' && (
+                <Button
+                  theme="primary"
+                  style={{ alignBottom: true, 'marginTop': '3em' }}
+                  onClick={ this.getResults }
+                >
+                  See Your Style
+                </Button>
+              )}
+              {this.props.surveyInfo.views[this.props.surveyInfo.currentView + 1] !== 'survey-finish' && (
               <Button
                 theme="primary"
                 style={{ alignBottom: true, 'marginTop': '3em' }}
@@ -104,6 +122,7 @@ class Survey extends PureComponent {
               >
                 Next Page
               </Button>
+            )}
             </GridCell>
           </Grid>
         </div>
@@ -148,4 +167,4 @@ const surveyState = state => {
   }
 }
 
-export default connect(surveyState, { moveForward, moveBackward, getImages, resetSurvey, selectClothing })(Survey)
+export default connect(surveyState, { moveForward, moveBackward, getImages, resetSurvey, selectClothing, submitSurvey })(Survey)
