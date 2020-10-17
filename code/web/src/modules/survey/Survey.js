@@ -21,7 +21,7 @@ class Survey extends PureComponent {
     this.state = {
       isLoading: false
     }
-    
+
     this.startForward = this.startForward.bind(this)
     this.selectProduct = this.selectProduct.bind(this)
     this.getResults = this.getResults.bind(this)
@@ -35,9 +35,17 @@ class Survey extends PureComponent {
     return this.props.surveyInfo.clothingList.map(product => {
       if (product.category === this.props.surveyInfo.views[this.props.surveyInfo.currentView]) {
         return (
-          <GridCell>
-            <Card style={{ width: '25em', margin: '2.5em auto'}} className={`product0${product.id} ${product.styleId} Card`} onClick={this.selectProduct}>
-              <img src={ APP_URL_API + product.image } alt={product.image.substring(14)} style={{ width: '100%' }}/>
+          <GridCell key={ product.id }>
+            <Card 
+              style={{ width: '25em', margin: '2.5em auto'}} 
+              className={`product0${product.id} ${product.styleId} Card`} 
+              onClick={this.selectProduct}
+            >
+              <img 
+                src={ APP_URL_API + product.image } 
+                alt={product.image.substring(14)} 
+                style={{ width: '100%' }}
+              />
             </Card>
           </GridCell>
         )
