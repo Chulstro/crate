@@ -62,13 +62,13 @@ class Survey extends PureComponent {
     }, {})
     //If we're returning total style ids:
     console.log("STYLEVALUE", styleValues)
-    this.props.submitSurvey(styleValues, this.props.user.details.id)
+    // this.props.submitSurvey(styleValues, this.props.user.details.id)
     //If we're returning a single style id:
-    // const arrangedValues = Object.keys(styleValues).sort((styleA, styleB) => {
-    //   return styleValues[styleB] - styleValues[styleA];
-    // })
-    // const finalStyle = { styleId: Number(arrangedValues[0]) }
-    // this.props.submitSurvey(finalStyle);
+    const arrangedValues = Object.keys(styleValues).sort((styleA, styleB) => {
+      return styleValues[styleB] - styleValues[styleA];
+    })
+    const finalStyle = { styleId: Number(arrangedValues[0]), userId: this.props.user.details.id}
+    this.props.submitSurvey(finalStyle)
     //If it's just the number, use the above one but change finalStyle to be assigned to just Number(arrangedValues[0])
   }
 
