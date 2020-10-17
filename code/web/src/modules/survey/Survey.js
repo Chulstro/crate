@@ -107,7 +107,7 @@ class Survey extends PureComponent {
         <div>
           <Grid style={{height: '7em'}}>
             <GridCell style={{ textAlign: "center", alignCenter: true }}>
-              <H4 style={{'paddingTop': '2em'}}>Choose your style</H4>
+              <H4 style={{'paddingTop': '2em'}}>Choose what you like best.</H4>
             </GridCell>
           </Grid>
           <Grid>
