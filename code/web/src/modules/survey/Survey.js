@@ -1,17 +1,15 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { withRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { Grid, GridCell } from '../../ui/grid'
 import Button from '../../ui/button'
-import ImageTile from '../../ui/image/Tile'
 import H4 from '../../ui/typography/H4'
-import { grey, grey2 } from '../../ui/common/colors'
 import Card from '../../ui/card/Card'
 
 import { APP_URL_API } from '../../setup/config/env'
-import userRoutes from '../../setup/routes/user'
+
 import { 
   moveForward, 
   moveBackward, 
@@ -185,6 +183,12 @@ class Survey extends PureComponent {
   }
 }
 
+Survey.propTypes = {
+  surveyInfo: PropTypes.object.isRequired,
+  currentView: PropTypes.string.isRequired,
+  user: PropTypes.object.isRequired
+}
+
 const surveyState = state => {
   return {
     surveyInfo: state.surveyInfo,
@@ -193,4 +197,4 @@ const surveyState = state => {
   }
 }
 
-export default connect(surveyState, { moveForward, moveBackward, getImages, resetSurvey, selectClothing, submitSurvey })(Survey)
+export default connect(surveyState, { moveForward, moveBackward, resetSurvey, selectClothing, submitSurvey })(Survey)
