@@ -12,7 +12,14 @@ import Card from '../../ui/card/Card'
 
 import { APP_URL_API } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
-import { moveForward, moveBackward, getImages, resetSurvey, selectClothing, submitSurvey } from './api/actions'
+import { 
+  moveForward, 
+  moveBackward, 
+  getImages, 
+  resetSurvey, 
+  selectClothing, 
+  submitSurvey 
+} from './api/actions'
 
 class Survey extends PureComponent {
   constructor(props) {
