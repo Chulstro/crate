@@ -61,7 +61,7 @@ export const moveBackward = () => (
 // need to include userId
 export const submitSurvey = (selectedClothing, userId) => {
   const surveyData = {
-    selectedClothing, 
+    selectedClothing,
     userId
   }
   return dispatch => {
