@@ -84,8 +84,10 @@ class Survey extends PureComponent {
         <div>
           <Grid style={{height: '7em'}}>
             <GridCell style={{ textAlign: "center", alignCenter: true }}>
-              <H4 style={{'paddingTop': '2em'}}>WELCOME TO THE DRAMARAMA!</H4>
-              <p style={{'marginTop': '1em'}}>Visualize your style.</p>
+              <H4 style={{'paddingTop': '2em'}}>Welcome to the style survey.</H4>
+              <p style={{'marginTop': '1em'}}>
+                On each page, choose one piece of clothing that you like best.
+              </p>
             </GridCell>
           </Grid>
           <Grid>
@@ -95,7 +97,7 @@ class Survey extends PureComponent {
                 style={{ alignBottom: true, 'marginTop': '3em' }}
                 onClick={ this.startForward }
               >
-                Start survey
+                Visualize your style.
               </Button>
             </GridCell>
           </Grid>
