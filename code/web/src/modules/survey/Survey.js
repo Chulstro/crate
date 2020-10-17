@@ -10,7 +10,7 @@ import H4 from '../../ui/typography/H4'
 import { grey, grey2 } from '../../ui/common/colors'
 import Card from '../../ui/card/Card'
 
-import { APP_URL } from '../../setup/config/env'
+import { APP_URL_API } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
 import { moveForward, moveBackward, getImages, resetSurvey, selectClothing } from './api/actions'
 
@@ -33,20 +33,22 @@ class Survey extends PureComponent {
 
   renderCards() {
     return this.props.surveyInfo.clothingList.map(product => {
-      return (
-        <GridCell>
-          <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.name.split(" ").join("")} Card`} onClick={this.selectProduct}>
-            <img src={product.image} alt={product.name} style={{ width: '100%' }}/>
-          </Card>
-        </GridCell>
-      )
+      if (product.category === this.props.surveyInfo.views[this.props.surveyInfo.currentView]) {
+        return (
+          <GridCell>
+            <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.id} Card`} onClick={this.selectProduct}>
+              <img src={ APP_URL_API + product.image } alt={product.image.substring(14)} style={{ width: '100%' }}/>
+            </Card>
+          </GridCell>
+        )
+      }
     })
   }
 
   selectProduct(event) {
     const card = event.target.closest('.Card');
     console.log(card);
-    if(!Object.keys(this.props.surveyInfo.selectedClothing).includes(this.props.surveyInfo.views[this.props.surveyInfo.currentView])) {
+    if (!Object.keys(this.props.surveyInfo.selectedClothing).includes(this.props.surveyInfo.views[this.props.surveyInfo.currentView])) {
       this.props.selectClothing(event);
       card.style.border = "3px solid magenta";
     }

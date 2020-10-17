@@ -63,42 +63,42 @@ module.exports = {
       //Sporty
       {
         category: 'sunglasses',
-        image: '/images/stock/sporty_sunglasses.jpg',
+        image: '/images/stock/sporty-sunglasses.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         category: 'sunglasses',
-        image: '/images/stock/sporty_sunglasses.jpg',
+        image: '/images/stock/sporty-sunglasses.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         category: 'bottoms',
-        image: '/images/stock/sporty_pants_male.jpg',
+        image: '/images/stock/sporty-pants-male.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         category: 'bottoms',
-        image: '/images/stock/sporty_pants_female.jpg',
+        image: '/images/stock/sporty-pants-female.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         category: 'tops',
-        image: '/images/stock/sporty_top_male.jpg',
+        image: '/images/stock/sporty-top-male.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         category: 'tops',
-        image: '/images/stock/sporty_top_female.jpg',
+        image: '/images/stock/sporty-top-female.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
