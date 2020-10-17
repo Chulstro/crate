@@ -29,6 +29,9 @@ class Item extends PureComponent {
     }
   }
 
+  // currently commented out all methods pertaining to the message pop up, as
+  // they're not needed in the context of the survey
+
   onClickSubscribe = (crateId) => {
     this.setState({
       isLoading: true
@@ -51,13 +54,13 @@ class Item extends PureComponent {
         this.props.messageShow('There was some error subscribing to this crate. Please try again.')
       })
       .then(() => {
-        this.setState({
-          isLoading: false
-        })
+        // this.setState({
+        //   isLoading: false
+        // })
 
-        window.setTimeout(() => {
-          this.props.messageHide()
-        }, 5000)
+        // window.setTimeout(() => {
+        //   this.props.messageHide()
+        // }, 5000)
       })
   }
 

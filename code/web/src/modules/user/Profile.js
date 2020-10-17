@@ -23,6 +23,7 @@ const Profile = (props) => (
       <title>My Profile - Crate</title>
     </Helmet>
 
+
     {/* Top title bar */}
     <Grid style={{ backgroundColor: grey }}>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>

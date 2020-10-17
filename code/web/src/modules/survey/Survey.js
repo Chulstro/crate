@@ -1,18 +1,22 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { withRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { Grid, GridCell } from '../../ui/grid'
 import Button from '../../ui/button'
-import ImageTile from '../../ui/image/Tile'
 import H4 from '../../ui/typography/H4'
-import { grey, grey2 } from '../../ui/common/colors'
 import Card from '../../ui/card/Card'
 
 import { APP_URL_API } from '../../setup/config/env'
-import userRoutes from '../../setup/routes/user'
-import { moveForward, moveBackward, getImages, resetSurvey, selectClothing, submitSurvey } from './api/actions'
+
+import { 
+  moveForward, 
+  moveBackward, 
+  resetSurvey, 
+  selectClothing, 
+  submitSurvey 
+} from './api/actions'
 
 class Survey extends PureComponent {
   constructor(props) {
@@ -21,7 +25,7 @@ class Survey extends PureComponent {
     this.state = {
       isLoading: false
     }
-    console.log("PPP", this.props.user.details.id)
+
     this.startForward = this.startForward.bind(this)
     this.selectProduct = this.selectProduct.bind(this)
     this.getResults = this.getResults.bind(this)
@@ -35,9 +39,17 @@ class Survey extends PureComponent {
     return this.props.surveyInfo.clothingList.map(product => {
       if (product.category === this.props.surveyInfo.views[this.props.surveyInfo.currentView]) {
         return (
-          <GridCell>
-            <Card style={{ width: '25em', margin: '2.5em auto'}} className={`product0${product.id} ${product.styleId} Card`} onClick={this.selectProduct}>
-              <img src={ APP_URL_API + product.image } alt={product.image.substring(14)} style={{ width: '100%' }}/>
+          <GridCell key={ product.id }>
+            <Card 
+              style={{ width: '25em', margin: '2.5em auto'}} 
+              className={`product0${product.id} ${product.styleId} Card`} 
+              onClick={this.selectProduct}
+            >
+              <img 
+                src={ APP_URL_API + product.image } 
+                alt={product.image.substring(14)} 
+                style={{ width: '100%' }}
+              />
             </Card>
           </GridCell>
         )
@@ -49,19 +61,16 @@ class Survey extends PureComponent {
     const allCards = document.querySelectorAll('.Card');
     allCards.forEach(card => card.style.border = 'none');
     const card = event.target.closest('.Card');
-    // console.log(card);
       this.props.selectClothing(event);
       card.style.border = "3px solid magenta";
   }
 
   getResults() {
-    console.log("selected", this.props.surveyInfo.selectedClothing)
     const styleValues = Object.values(this.props.surveyInfo.selectedClothing).reduce((styleValue, clothingStyle) => {
       styleValue[clothingStyle] ? styleValue[clothingStyle] += 1 : styleValue[clothingStyle] = 1;
       return styleValue;
     }, {})
     //If we're returning total style ids:
-    console.log("STYLEVALUE", styleValues)
     this.props.submitSurvey(styleValues, this.props.user.details.id)
     //If we're returning a single style id:
     // const arrangedValues = Object.keys(styleValues).sort((styleA, styleB) => {
@@ -79,8 +88,10 @@ class Survey extends PureComponent {
         <div>
           <Grid style={{height: '7em'}}>
             <GridCell style={{ textAlign: "center", alignCenter: true }}>
-              <H4 style={{'paddingTop': '2em'}}>WELCOME TO THE DRAMARAMA!</H4>
-              <p style={{'marginTop': '1em'}}>Visualize your style.</p>
+              <H4 style={{'paddingTop': '2em'}}>Welcome to the style survey.</H4>
+              <p style={{'marginTop': '1em'}}>
+                Click start, and then on each page, choose one piece of clothing that you like best.
+              </p>
             </GridCell>
           </Grid>
           <Grid>
@@ -100,7 +111,7 @@ class Survey extends PureComponent {
         <div>
           <Grid style={{height: '7em'}}>
             <GridCell style={{ textAlign: "center", alignCenter: true }}>
-              <H4 style={{'paddingTop': '2em'}}>Choose your style</H4>
+              <H4 style={{'paddingTop': '2em'}}>Choose what you like best.</H4>
             </GridCell>
           </Grid>
           <Grid>
@@ -118,7 +129,7 @@ class Survey extends PureComponent {
               {this.props.surveyInfo.views[this.props.surveyInfo.currentView + 1] === 'survey-finish' && (
                 <Button
                   theme="primary"
-                  style={{ alignBottom: true, 'marginTop': '3em' }}
+                  style={{ alignBottom: true, 'margin': '3em' }}
                   onClick={ this.getResults }
                 >
                   See Your Style
@@ -127,7 +138,7 @@ class Survey extends PureComponent {
               {this.props.surveyInfo.views[this.props.surveyInfo.currentView + 1] !== 'survey-finish' && (
               <Button
                 theme="primary"
-                style={{ alignBottom: true, 'marginTop': '3em' }}
+                style={{ alignBottom: true, 'margin': '3em' }}
                 onClick={ this.props.moveForward }
               >
                 Next Page
@@ -171,6 +182,12 @@ class Survey extends PureComponent {
   }
 }
 
+Survey.propTypes = {
+  surveyInfo: PropTypes.object.isRequired,
+  currentView: PropTypes.string.isRequired,
+  user: PropTypes.object.isRequired
+}
+
 const surveyState = state => {
   return {
     surveyInfo: state.surveyInfo,
@@ -179,4 +196,4 @@ const surveyState = state => {
   }
 }
 
-export default connect(surveyState, { moveForward, moveBackward, getImages, resetSurvey, selectClothing, submitSurvey })(Survey)
+export default connect(surveyState, { moveForward, moveBackward, resetSurvey, selectClothing, submitSurvey })(Survey)
