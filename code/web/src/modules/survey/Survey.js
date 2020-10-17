@@ -21,7 +21,7 @@ class Survey extends PureComponent {
     this.state = {
       isLoading: false
     }
-    console.log("PPP", this.props.user.details.id)
+    
     this.startForward = this.startForward.bind(this)
     this.selectProduct = this.selectProduct.bind(this)
     this.getResults = this.getResults.bind(this)
@@ -49,19 +49,16 @@ class Survey extends PureComponent {
     const allCards = document.querySelectorAll('.Card');
     allCards.forEach(card => card.style.border = 'none');
     const card = event.target.closest('.Card');
-    // console.log(card);
       this.props.selectClothing(event);
       card.style.border = "3px solid magenta";
   }
 
   getResults() {
-    console.log("selected", this.props.surveyInfo.selectedClothing)
     const styleValues = Object.values(this.props.surveyInfo.selectedClothing).reduce((styleValue, clothingStyle) => {
       styleValue[clothingStyle] ? styleValue[clothingStyle] += 1 : styleValue[clothingStyle] = 1;
       return styleValue;
     }, {})
     //If we're returning total style ids:
-    console.log("STYLEVALUE", styleValues)
     this.props.submitSurvey(styleValues, this.props.user.details.id)
     //If we're returning a single style id:
     // const arrangedValues = Object.keys(styleValues).sort((styleA, styleB) => {
