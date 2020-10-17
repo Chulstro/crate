@@ -60,10 +60,18 @@ export const moveBackward = () => (
 
 export const submitSurvey = selectedClothing => (
   dispatch => {
-    dispatch({
-      type: SUBMIT_SURVEY
-    })
-  }
+    axios.post(routeApi, query({
+      operation: selectedClothing,
+      fields: ['style']
+    }))
+      .then(response => {
+        dispatch({
+          type: SUBMIT_SURVEY,
+          style: response.data.data.style
+        })
+      })
+      .catch(error => console.error('There\'s an error'))
+    }
 )
 
 export const resetSurvey = () => (
