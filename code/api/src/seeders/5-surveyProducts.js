@@ -12,20 +12,6 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        category: 'belt',
-        image: '/images/stock/punk-belt.jpg',
-        styleId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        category: 'watch',
-        image: '/images/stock/punk-watch.jpg',
-        styleId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
         category: 'watch',
         image: '/images/stock/punk-watch.jpg',
         styleId: 1,
@@ -53,23 +39,9 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
-        category: 'bottom',
-        image: '/images/stock/punk-pants.jpg',
-        styleId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
       //Sporty
       {
-        category: 'sunglasse',
-        image: '/images/stock/sporty-sunglasses.jpg',
-        styleId: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        category: 'sunglasse',
+        category: 'sunglasses',
         image: '/images/stock/sporty-sunglasses.jpg',
         styleId: 2,
         createdAt: new Date(),
@@ -112,13 +84,6 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        category: 'watch',
-        image: '/images/stock/casual_watch.jpg',
-        styleId: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
         category: 'top',
         image: '/images/stock/casual_top_female.jpg',
         styleId: 3,
@@ -147,8 +112,6 @@ module.exports = {
         updatedAt: new Date()
       },
       //Formal
-
-      //Given
       {
         category: 'belt',
         image: '/images/stock/belt-female.jpg',
@@ -210,7 +173,6 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-
       //Vintage
       {
         category: 'belt',
@@ -267,7 +229,7 @@ module.exports = {
         styleId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
-      },
+      }
     ])
   },
 
