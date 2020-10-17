@@ -66,7 +66,7 @@ export const submitSurvey = (selectedClothing, userId) => {
   }
   return dispatch => {
     axios.post(routeApi, mutation({
-      // opoeration is what connects the backend
+      // operation is what connects the backend
       operation: 'createUserStyle',
       variable: surveyData,
       //styleId below, not style
