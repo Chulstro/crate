@@ -101,7 +101,7 @@ module.exports = {
         description: 'Hide your eyes from the awesome',
         type: params.product.types.accessory.id,
         gender: params.user.gender.female.id,
-        image: '/images/stock/sporty_sunglasses.jpg',
+        image: '/images/stock/sporty-sunglasses.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -112,7 +112,7 @@ module.exports = {
         description: 'Hide your eyes from the awesome',
         type: params.product.types.accessory.id,
         gender: params.user.gender.male.id,
-        image: '/images/stock/sporty_sunglasses.jpg',
+        image: '/images/stock/sporty-sunglasses.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -123,7 +123,7 @@ module.exports = {
         description: 'Sweats for comfort and movement',
         type: params.product.types.cloth.id,
         gender: params.user.gender.male.id,
-        image: '/images/stock/sporty_pants_male.jpg',
+        image: '/images/stock/sporty-pants-male.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -134,7 +134,7 @@ module.exports = {
         description: 'High waisted for both comfort and movement',
         type: params.product.types.cloth.id,
         gender: params.user.gender.female.id,
-        image: '/images/stock/sporty_pants_female.jpg',
+        image: '/images/stock/sporty-pants-female.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -145,7 +145,7 @@ module.exports = {
         description: 'Looks good and breathes better',
         type: params.product.types.cloth.id,
         gender: params.user.gender.male.id,
-        image: '/images/stock/sporty_top_male.jpg',
+        image: '/images/stock/sporty-top-male.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -156,7 +156,7 @@ module.exports = {
         description: 'Made for ease of movement',
         type: params.product.types.cloth.id,
         gender: params.user.gender.female.id,
-        image: '/images/stock/sporty_top_female.jpg',
+        image: '/images/stock/sporty-top-female.jpg',
         styleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -229,7 +229,7 @@ module.exports = {
         updatedAt: new Date()
       },
       //Formal
-      
+
       //Given
       {
         name: 'Belt for Women',
