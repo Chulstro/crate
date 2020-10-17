@@ -13,7 +13,6 @@ import { APP_URL_API } from '../../setup/config/env'
 import { 
   moveForward, 
   moveBackward, 
-  getImages, 
   resetSurvey, 
   selectClothing, 
   submitSurvey 
