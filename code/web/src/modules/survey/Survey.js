@@ -61,7 +61,7 @@ class Survey extends PureComponent {
       return styleValue;
     }, {})
     //If we're returning total style ids:
-    //this.props.submitSurvey(styleValues)
+    this.props.submitSurvey(styleValues)
     //If we're returning a single style id:
     // const arrangedValues = Object.keys(styleValues).sort((styleA, styleB) => {
     //   return styleValues[styleB] - styleValues[styleA];
