@@ -36,19 +36,16 @@ export function login(userCredentials, isLoading = true) {
     return axios.post(routeApi, query({
       operation: 'userLogin',
       variables: userCredentials,
-      fields: ['user {name, email, role}', 'token']
+      fields: ['user {id, name, email, role}', 'token']
     }))
       .then(response => {
         let error = ''
-
         if (response.data.errors && response.data.errors.length > 0) {
           error = response.data.errors[0].message
         } else if (response.data.data.userLogin.token !== '') {
           const token = response.data.data.userLogin.token
           const user = response.data.data.userLogin.user
-
           dispatch(setUser(token, user))
-
           loginSetUserLocalStorageAndCookie(token, user)
         }
 
