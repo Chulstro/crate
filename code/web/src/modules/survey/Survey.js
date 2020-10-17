@@ -125,7 +125,7 @@ class Survey extends PureComponent {
               {this.props.surveyInfo.views[this.props.surveyInfo.currentView + 1] === 'survey-finish' && (
                 <Button
                   theme="primary"
-                  style={{ alignBottom: true, 'marginTop': '3em' }}
+                  style={{ alignBottom: true, 'margin': '3em' }}
                   onClick={ this.getResults }
                 >
                   See Your Style
@@ -134,7 +134,7 @@ class Survey extends PureComponent {
               {this.props.surveyInfo.views[this.props.surveyInfo.currentView + 1] !== 'survey-finish' && (
               <Button
                 theme="primary"
-                style={{ alignBottom: true, 'marginTop': '3em' }}
+                style={{ alignBottom: true, 'margin': '3em' }}
                 onClick={ this.props.moveForward }
               >
                 Next Page
