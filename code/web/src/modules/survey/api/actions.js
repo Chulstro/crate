@@ -55,18 +55,11 @@ export const moveBackward = () => (
   }
 )
 
-// need to include userId
-export const submitSurvey = (selectedClothing, userId) => {
-  const surveyData = {
-    selectedClothing, 
-    userId
-  }
+export const submitSurvey = (finalStyle) => {
   return dispatch => {
     axios.post(routeApi, mutation({
-      // opoeration is what connects the backend
       operation: 'createUserStyle',
-      variable: surveyData,
-      //styleId below, not style
+      variable: finalStyle,
       fields: ['styleId']
     }))
       .then(response => {
