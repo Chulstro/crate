@@ -13,9 +13,6 @@ export const RESET_SURVEY = 'SURVEY/RESET_SURVEY'
 export const SELECT_CLOTHING = 'SURVEY/SELECT_CLOTHING'
 export const SUBMIT_SURVEY = 'SURVEY/SUBMIT_SURVEY'
 
-// export const GET_PRODUCTS = 'SURVEY/GET_PRODUCTS'
-// export const GET_IMAGES = 'SURVEY/GET_IMAGES'
-
 export const startSurvey = crateId => (
   dispatch => {
     axios.post(routeApi, query({
@@ -58,18 +55,11 @@ export const moveBackward = () => (
   }
 )
 
-// need to include userId
-export const submitSurvey = (selectedClothing, userId) => {
-  const surveyData = {
-    selectedClothing, 
-    userId
-  }
+export const submitSurvey = (finalStyle) => {
   return dispatch => {
     axios.post(routeApi, mutation({
-      // opoeration is what connects the backend
       operation: 'createUserStyle',
-      variable: surveyData,
-      //styleId below, not style
+      variable: finalStyle,
       fields: ['styleId']
     }))
       .then(response => {
