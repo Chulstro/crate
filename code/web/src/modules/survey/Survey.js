@@ -36,7 +36,7 @@ class Survey extends PureComponent {
       if (product.category === this.props.surveyInfo.views[this.props.surveyInfo.currentView]) {
         return (
           <GridCell>
-            <Card style={{ width: '25em', margin: '2.5em auto'}} className={`${product.id} Card`} onClick={this.selectProduct}>
+            <Card style={{ width: '25em', margin: '2.5em auto'}} className={`product0${product.id} ${product.styleId} Card`} onClick={this.selectProduct}>
               <img src={ APP_URL_API + product.image } alt={product.image.substring(14)} style={{ width: '100%' }}/>
             </Card>
           </GridCell>
@@ -55,11 +55,18 @@ class Survey extends PureComponent {
   }
 
   getResults() {
+    console.log(this.props.surveyInfo.selectedClothing)
     const styleValues = Object.values(this.props.surveyInfo.selectedClothing).reduce((styleValue, clothingStyle) => {
-      styleValue[clothingStyle] += 1;
+      styleValue[clothingStyle] ? styleValue[clothingStyle] += 1 : styleValue[clothingStyle] = 1;
       return styleValue;
     }, {})
-    console.log(styleValues);
+    //If we're returning total style ids:
+    //this.props.submitSurvey(styleValues)
+    //If we're returning a single style id:
+    const arrangedValues = Object.keys(styleValues).sort((styleA, styleB) => {
+      return styleValues[styleB] - styleValues[styleA];
+    })
+    console.log(arrangedValues);
   }
 
   render() {

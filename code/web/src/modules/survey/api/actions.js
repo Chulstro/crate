@@ -37,7 +37,7 @@ export const selectClothing = event => (
     console.log(event.target.closest('.Card').classList);
     dispatch({
       type: SELECT_CLOTHING,
-      clothingStyle: Number(event.target.closest('.Card').classList[1])
+      clothingStyle: Number(event.target.closest('.Card').classList[2])
     })
   }
 )
